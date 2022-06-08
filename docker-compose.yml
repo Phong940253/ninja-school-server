@@ -95,7 +95,7 @@ services:
       MYSQL_ROOT_PASSWORD: 12345678
       MYSQL_USER: root
       MYSQL_DATABASE: nja
-  
+
   mysql-cron-backup:
     image: fradelg/mysql-cron-backup
     depends_on:
@@ -126,7 +126,6 @@ services:
       - 18085:80
     depends_on:
       - mysql
-  
 
   agent:
     image: portainer/agent:2.11.1
@@ -161,7 +160,7 @@ services:
 
 networks:
   default:
-    driver: overlay
+    # driver: overlay
     attachable: true
 volumes:
   local_mysql_data: null

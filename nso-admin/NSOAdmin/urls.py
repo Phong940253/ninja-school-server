@@ -36,7 +36,7 @@ from NSOAdmin.views import (
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("nja.txt", server_list),
+    path("server.txt", server_list),
     path("srvip/nj.txt", srvip),
     path("api/topup_card", topup_card_webhook),
     path("", index, name="home"),

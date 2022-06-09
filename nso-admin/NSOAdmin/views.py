@@ -30,8 +30,9 @@ def server_list(request):
     List all code snippets, or create a new snippet.
     """
     if request.method == "GET":
-        server_format: str = "MoonSmile:34.87.101.206:14444:0:0,Bokken:112.213.84.18:14444:0:0,Shuriken:27.0.14.73:14444:0:0,Tessen:27.0.14.73:14444:1:0,Kunai:112.213.94.135:14444:0:0,Katana:112.213.94.161:14444:0:0"
-        return HttpResponse(server_format, content_type="text/plain; charset=utf8")
+        server_format: str = "Hỏa quốc:localhost:14444:0:0"
+        return HttpResponse(server_format,
+                            content_type="text/plain; charset=utf8")
 
 
 @api_view(["GET"])
@@ -39,7 +40,8 @@ def srvip(request):
     if request.method == "GET":
         server_format: str = "34.87.101.206:14444"
 
-        return HttpResponse(server_format, content_type="text/plain; charset=utf8")
+        return HttpResponse(server_format,
+                            content_type="text/plain; charset=utf8")
 
 
 def index(request):
@@ -67,10 +69,12 @@ def register(request):
             username == re.findall(r"([a-z0-9]+)", username)[0]
             and password == re.findall(r"([a-z0-9]+)", password)[0]
         ):
-            return response.fail("Tài khoản và mật khẩu phải là số và chữ thường.")
+            return response.fail(
+                "Tài khoản và mật khẩu phải là số và chữ thường.")
 
         if len(username) < 8 or len(password) < 8:
-            return response.fail("Tài khoản hoặc mật khẩu phải từ 8 kí tự trở lên.")
+            return response.fail(
+                "Tài khoản hoặc mật khẩu phải từ 8 kí tự trở lên.")
 
         if password.isdigit() or password.isalpha():
             return response.fail("Mật khẩu cần phải có cả chữ thường và số.")
@@ -80,11 +84,14 @@ def register(request):
             or ("abc" in password)
             or (len(list(set(password))) <= 2)
         ):
-            return response.fail("Mật khẩu không an toàn. Vui lòng chọn mật khẩu khác.")
+            return response.fail(
+                "Mật khẩu không an toàn. Vui lòng chọn mật khẩu khác.")
 
-        player: Optional[Player] = Player.objects.filter(username=username).first()
+        player: Optional[Player] = Player.objects.filter(
+            username=username).first()
         if not player:
-            num_regis: int = cache.get_or_set(client_ip, 0, timeout=86400 * 365)
+            num_regis: int = cache.get_or_set(
+                client_ip, 0, timeout=86400 * 365)
 
             status: str = "wait"
             if num_regis >= 2:

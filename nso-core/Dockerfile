@@ -39,4 +39,4 @@ COPY --from=target /app/NinjaServer.jar /app/NinjaServer.jar
 
 EXPOSE 14444
 
-CMD ["java" ,"-jar","/app/NinjaServer.jar"] 
+CMD ["java", "-Xmx180m", "-Xms180m","-jar", "/app/NinjaServer.jar"] 

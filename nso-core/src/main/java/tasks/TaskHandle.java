@@ -702,13 +702,13 @@ public class TaskHandle {
                 break;
 
             default:
-                if (taskTemplates.length > ninja.getTaskId()) {
-                    val task = taskTemplates[ninja.getTaskId()];
-                    if (ninja.getTaskIndex() == 0 && task.getMinLevel() <= ninja.getLevel()
-                            || task.getBypass() == true) {
-                        ninja.upMainTask();
-                    }
-                }
+//                if (taskTemplates.length > ninja.getTaskId()) {
+//                    val task = taskTemplates[ninja.getTaskId()];
+//                    if (ninja.getTaskIndex() == 0 && task.getMinLevel() <= ninja.getLevel()
+//                            || task.getBypass()) {
+//                        ninja.upMainTask();
+//                    }
+//                }
         }
         inMap(ninja);
     }

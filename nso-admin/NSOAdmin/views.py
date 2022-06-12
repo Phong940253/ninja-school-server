@@ -38,7 +38,7 @@ def server_list(request):
 @api_view(["GET"])
 def srvip(request):
     if request.method == "GET":
-        server_format: str = "34.87.101.206:14444"
+        server_format: str = "Hỏa quốc:localhost:14444:0:0"
 
         return HttpResponse(server_format,
                             content_type="text/plain; charset=utf8")
@@ -113,34 +113,6 @@ def register(request):
         return response.success(
             {"status": "Success", "message": "Bạn đã đăng kí tài khoàn thành công."}
         )
-
-
-def apk_file(request):
-    return FileResponse(open("packages/NSO_WORLD_v1.5.6.NODOMAIN.apk", "rb"))
-
-
-def apk_hack_file(request):
-    return FileResponse(open("packages/Ninja-148.MS_NODOMAIN.apk", "rb"))
-
-
-def jar_file(request):
-    return FileResponse(open("packages/nso-ms.nodomain.v1.jar", "rb"))
-
-
-def jar_x3_file(request):
-    return FileResponse(open("packages/nso-ms.nodomain.x3.jar", "rb"))
-
-
-def jar_hsl_x3_file(request):
-    return FileResponse(open("packages/nso-ms.auto_hsl.nodomain.jar", "rb"))
-
-
-def jar_new_file(request):
-    return FileResponse(open("packages/nso-ms.v188.nodomain.jar", "rb"))
-
-
-def apk_new_file(request):
-    return FileResponse(open("packages/NSO_WORLD_v1.8.8.NODOMAIN.apk", "rb"))
 
 
 @api_view(["GET"])

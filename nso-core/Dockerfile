@@ -38,5 +38,8 @@ COPY ./application.properties ./application.properties
 COPY --from=target /app/NinjaServer.jar /app/NinjaServer.jar
 
 EXPOSE 14444
+# EXPOSE 5000
 
+# CMD ["java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5000", "-Xmx180m", "-Xms180m","-jar", "/app/NinjaServer.jar"] 
+# debug
 CMD ["java", "-Xmx180m", "-Xms180m","-jar", "/app/NinjaServer.jar"] 

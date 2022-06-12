@@ -114,6 +114,7 @@ public class MenuController {
             } else if (ninja.getTaskId() == 8 || ninja.getTaskId() == 0) {
                 boolean npcTalking = TaskHandle.npcTalk(ninja, menuId, npcId);
                 if (npcTalking) {
+
                     return;
                 }
 
@@ -1290,6 +1291,11 @@ public class MenuController {
                     break;
 
                 case 14:
+                    if (menuId == 0) {
+                        p.nj.getPlace().chatNPC(p, npcId,
+                                "Hmmmmm hmmm...");
+                    }
+                    break;
                 case 15:
                 case 16: {
                     boolean hasItem = false;

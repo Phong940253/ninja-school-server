@@ -10,3 +10,5 @@ target/
 *.class
 
 codefix/node_modules/
+
+.env

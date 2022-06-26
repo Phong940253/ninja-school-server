@@ -238,7 +238,7 @@ public class Draw {
                         break;
                     }
 
-                    long amount = nTicket * 100_000_000;
+                    long amount = nTicket * 1_000_000;
                     if (menuId % 2 == 0) {
                         // gui
                         if (menuId % 100 == 0) {

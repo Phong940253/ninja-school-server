@@ -161,18 +161,18 @@ public class Manager {
         this.loadConfigFile();
         this.EVENT = 0;
         if (this.rotationluck[0] == null) {
-            this.rotationluck[0] = new RotationLuck("Vòng xoay vip", (byte) 1, (short) 120, 5_000, 1_000_000,
+            this.rotationluck[0] = new RotationLuck("Vòng xoay vip", (byte) 1, (short) 120, 5, 1_000,
                     500_000_000, "lượng");
             this.rotationluck[0].start();
         }
         if (rotationluck[1] == null) {
-            this.rotationluck[1] = new RotationLuck("Vòng xoay thường", (byte) 0, (short) 120, 5_000_000, 100_000_000,
-                    1_500_000_000);
+            this.rotationluck[1] = new RotationLuck("Vòng xoay thường", (byte) 0, (short) 120, 50_000, 1_000_000,
+                    100_000_000);
             this.rotationluck[1].start();
         }
         if (rotationluck[2] == null) {
-            this.rotationluck[2] = new RotationLuck("Tài xỉu", (byte) 2, (short) 60, 5_000_000, 200_000_000,
-                    2_000_000_000);
+            this.rotationluck[2] = new RotationLuck("Tài xỉu", (byte) 2, (short) 60, 50_000, 1_000_000,
+                    100_000_000);
             this.rotationluck[2].start();
         }
         this.loadCache();
@@ -385,18 +385,23 @@ public class Manager {
             this.PORT = 14444;
         }
 
-        this.mysql_host = System.getenv("DB_HOST");
-        this.mysql_port = System.getenv("DB_PORT");
-        this.mysql_user = System.getenv("DB_USER");
-        this.mysql_pass = System.getenv("DB_PASS");
-        this.mysql_database = System.getenv("DB_DATABASE");
+//        this.mysql_host = System.getenv("DB_HOST");
+//        this.mysql_port = System.getenv("DB_PORT");
+//        this.mysql_user = System.getenv("DB_USER");
+//        this.mysql_pass = System.getenv("DB_PASS");
+//        this.mysql_database = System.getenv("DB_DATABASE");
+        this.mysql_host = "localhost";
+        this.mysql_port = "3306";
+        this.mysql_user = "root";
+        this.mysql_pass = "01676940253";
+        this.mysql_database = "nja";
 
         try {
             util.setDebug(Boolean.parseBoolean(System.getenv("DEBUG")));
         } catch (Exception e) {
             util.setDebug(false);
         }
-
+        util.setDebug(true);
         if (configMap.containsKey("version-Data")) {
             this.vsData = Byte.parseByte(configMap.get("version-Data"));
         } else {

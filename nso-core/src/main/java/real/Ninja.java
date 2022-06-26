@@ -1788,9 +1788,9 @@ public class Ninja extends Body implements TeamBattle, IGlobalBattler {
         if (p == null) {
             return;
         }
-        p.upluongMessage(20_000L);
-        this.upxuMessage(10_000_000L);
-        this.upyenMessage(40_000_000L);
+        p.upluongMessage(200L);
+        this.upxuMessage(100_000L);
+        this.upyenMessage(400_000L);
         p.nhanQua = true;
     }
 }

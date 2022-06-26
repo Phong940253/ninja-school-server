@@ -239,6 +239,7 @@ public class GameScr {
             if (f.exists()) {
                 f.delete();
             }
+            f.getParentFile().mkdirs();
             f.createNewFile();
             final FileOutputStream fos = new FileOutputStream(url);
             fos.write(data);

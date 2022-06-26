@@ -1708,13 +1708,13 @@ public class MenuController {
                                 return;
                             }
 
-                            if (p.luong < 1000) {
-                                p.session.sendMessageLog("Bạn không đủ 1000 lượng để sử dụng chức năng này.");
+                            if (p.luong < 100) {
+                                p.session.sendMessageLog("Bạn không đủ 100 lượng để sử dụng chức năng này.");
                                 return;
                             }
 
                             luyenBiKip(p);
-                            p.upluongMessage(-1000L);
+                            p.upluongMessage(-100L);
                             p.sendYellowMessage("Bạn đã luyện bí kíp thành công.");
                         } else {
                             p.session.sendMessageLog("Hãy sử dụng bí kíp để sử dụng được chức năng này.");
@@ -2099,7 +2099,7 @@ public class MenuController {
                         case 1: {
                             p.nj.getPlace().chatNPC(p, (short) npcId,
                                     "Con đang có " + p.nj.nActPoint + " điểm hoạt động. Con chỉ có thể chuyển đc "
-                                            + p.nj.nActPoint * 1000000 + " yên.");
+                                            + p.nj.nActPoint * 100000 + " yên.");
                             this.sendWrite(p, (short) 24_1, "Số lượng");
                             break;
                         }
@@ -2267,7 +2267,7 @@ public class MenuController {
                                 p.nj.getPlace().chatNPC(p, (short) npcId,
                                         "Hãy luyện tập chăm chỉ để tăng cấp và nhận phần thưởng con nhé");
                                 p.nj.reward70 = 1;
-                                p.upluongMessage(5000);
+                                p.upluongMessage(100);
                                 p.nj.upyenMessage(1000000);
                                 p.nj.upxuMessage(1000000);
 
@@ -2292,7 +2292,7 @@ public class MenuController {
                                 p.nj.getPlace().chatNPC(p, (short) npcId,
                                         "Hãy luyện tập chăm chỉ để tăng cấp và nhận phần thưởng con nhé");
                                 p.nj.reward90 = 1;
-                                p.upluongMessage(10000);
+                                p.upluongMessage(100);
                                 ;
                                 p.nj.upyenMessage(1500000);
                                 p.nj.upxuMessage(1500000);
@@ -2318,7 +2318,7 @@ public class MenuController {
                                 p.nj.getPlace().chatNPC(p, (short) npcId,
                                         "Hãy luyện tập chăm chỉ để tăng cấp và nhận phần thưởng con nhé");
                                 p.nj.reward130 = 1;
-                                p.upluongMessage(20000);
+                                p.upluongMessage(200);
                                 p.nj.upyenMessage(2000000);
                                 p.nj.upxuMessage(2000000);
 
@@ -2343,7 +2343,7 @@ public class MenuController {
                                 p.nj.getPlace().chatNPC(p, (short) npcId,
                                         "Hãy luyện tập chăm chỉ để tăng cấp và nhận phần thưởng con nhé");
                                 p.nj.reward150 = 1;
-                                p.upluongMessage(30000);
+                                p.upluongMessage(300);
                                 p.nj.upyenMessage(3000000);
                                 p.nj.upxuMessage(3000000);
 
@@ -2361,7 +2361,7 @@ public class MenuController {
                 case 24_6: {
                     p.nj.getPlace().chatNPC(p, (short) npcId,
                             "Bạn đang có " + p.nj.ticketXu + " vé xu và " + p.nj.ticketYen
-                                    + " vé yên. Mỗi vé có thể quy đổi tương đương 100.000.000 yên/xu.");
+                                    + " vé yên. Mỗi vé có thể quy đổi tương đương 1.000.000 yên/xu.");
                     p.typemenu = 24_6_0 + menuId;
                     String currency = menuId == 0 ? "Yên" : "Xu";
                     doMenuArray(p, new String[] { "Gửi " + currency, "Rút " + currency });

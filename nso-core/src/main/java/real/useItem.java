@@ -388,6 +388,11 @@ public class useItem {
                 }
                 p.nj.removeItemBag(index, 1);
                 break;
+            case 194:
+                if (p.nj.getTaskId() == 2 && p.nj.getTaskIndex() == 0) {
+                    p.nj.upMainTask();
+                }
+                break;
             case 240:
                 p.nj.timesResetPpoint += 1;
                 p.sendYellowMessage("Số lần tẩy tiềm năng của bạn là " + p.nj.timesResetPpoint);

@@ -176,9 +176,9 @@ public class User extends Actor implements SendMessage {
 
                 if (status.equals("wait")) {
                     conn.sendMessageLog(
-                            "Tài khoản của bạn chưa được kích hoạt! Liên hệ Admin để biết thêm thông tin.");
-                    u[0] = null;
-                    return;
+                            "Tài khoản của bạn chưa được kích hoạt! Hãy kích hoạt để nhận được nhiều phần thưởng hơn.");
+//                    u[0] = null;
+//                    return;
                 }
                 if (lock == 1 || status.equals("block")) {
                     conn.sendMessageLog(
@@ -1538,8 +1538,8 @@ public class User extends Actor implements SendMessage {
             try {
                 SQLManager.executeUpdate(
                         "INSERT INTO player(`username`,`password`,`luong`,`ninja`,`coin`,`ticketGold`,`lock`,`status`,`phone`,`ngaythamgia`,`nhomkhachhang`,`clanTerritoryId`,`level`, `ip`) VALUES "
-                                + "(\"" + ip + "\"," + 12345 + "," + 1000
-                                + ",'[]','0','0','0', 'active', NULL,'2021-12-01 02:21:02','Dùng Thử','-1', NULL, '"
+                                + "(\"" + ip + "\"," + 12345 + "," + 0
+                                + ",'[]','0','0','0', 'wait', NULL,'2021-12-01 02:21:02','Dùng Thử','-1', NULL, '"
                                 + ip
                                 + "');");
             } catch (Exception e) {

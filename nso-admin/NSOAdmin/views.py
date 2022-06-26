@@ -100,7 +100,7 @@ def register(request):
             Player.objects.create(
                 username=username,
                 password=password,
-                luong=1000,
+                luong=0,
                 status=status,
                 ip=client_ip,
             )

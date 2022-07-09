@@ -1433,7 +1433,7 @@ public class User extends Actor implements SendMessage {
                                         + "Nhận quà tân thủ tại NPC Vua Hùng\n"
                                         + "---------------------------------\n"
                                         + "Thần thú sẽ xuất hiện vào những giờ lẻ, nhanh tay săn để sở hữu những món đồ ưng ý.\n"
-                                        + "Bạn có thể chuyển phái tại NPC Hùng Vương khi đã có đủ 10.000 lượng.\n"
+                                        + "Bạn có thể chuyển phái tại NPC Hùng Vương khi đã có đủ 1.000 lượng.\n"
                                         + "Làm nhiệm vụ hằng ngày để có cơ hội nhận lượng, exp.\n"
                                         + "Dễ dàng kiếm lượng bằng cách: Săn TA/TL/Thần Thú + nvhn/nvtt/nvct.\n"
                         // + "- Sự kiện Tết nguyên đán chính thức bắt đầu từ ngày 18/1/2022. Nhanh tay

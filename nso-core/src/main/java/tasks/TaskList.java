@@ -197,7 +197,6 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 5000 },
-                                                                { LUONG_ID, 200 }
                                                 })
 
                                                 .build(),
@@ -219,7 +218,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 50000 },
-                                                                { LUONG_ID, 200 }
+                                                                
                                                 })
                                                 .build(),
                                 builder()
@@ -240,7 +239,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 500000 },
-                                                                { LUONG_ID, 200 }
+                                                                
                                                 })
                                                 .build(),
                                 builder()
@@ -257,7 +256,7 @@ public class TaskList {
                                                                 "Báo cáo sư phụ"
                                                 })
                                                 .rewards(new int[][] {
-                                                                { LUONG_ID, 150 }
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, -1, -1, -1, -1
@@ -280,7 +279,7 @@ public class TaskList {
                                                 .bypass(true)
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 500_000 },
-                                                                { LUONG_ID, 150 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, -1, -1, -1, -1
@@ -306,7 +305,7 @@ public class TaskList {
                                                                 "Mang về cho cô Ameji"
                                                 }).rewards(new int[][] {
                                                                 { EXP_ID, 500_000 },
-                                                                { LUONG_ID, 150 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 40, 60, -1
@@ -336,7 +335,7 @@ public class TaskList {
                                                                 "Báo cáo cô Furoyawa",
                                                 }).rewards(new int[][] {
                                                                 { EXP_ID, 500_000 },
-                                                                { LUONG_ID, 150 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, -1, -1, -1, -1
@@ -357,7 +356,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 500_000 },
-                                                                { LUONG_ID, 150 },
+                                                                
                                                 })
                                                 .subNames(new String[] {
                                                                 "Trình độ đạt cấp 22",
@@ -389,7 +388,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1,
@@ -419,7 +418,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .itemsPick(new int[] {
                                                                 -1,
@@ -446,7 +445,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .name("NV lấy nước rừng sâu")
                                                 .detail("")
@@ -475,7 +474,7 @@ public class TaskList {
                                                 .rewards(new int[][] {
                                                                 { 223, 1 },
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .mobs(new int[][] {
                                                                 {},
@@ -510,7 +509,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .name("NV Rèn luyện sức mạnh")
                                                 .detail("")
@@ -523,7 +522,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 100, 100, -1,
@@ -553,7 +552,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 100, -1
@@ -582,7 +581,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 1, -1
@@ -598,7 +597,7 @@ public class TaskList {
                                                 .rewards(new int[][] {
                                                                 { 224, 1 },
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
 
                                                 })
                                                 .npcTalk("Sao con không giữ tấm bảng đồ để đi tìm báu vật, thôi lỡ rồi ta giao lại cho con để đi tìm báu vật nhé, cứ đi theo tấm bản đồ là tìm được, "
@@ -638,7 +637,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
 
                                                 })
                                                 .counts(new int[] {
@@ -662,7 +661,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 100, -1
@@ -690,7 +689,7 @@ public class TaskList {
 
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .subNames(new String[] {
                                                                 "Trình độ đạt cấp 39",
@@ -716,7 +715,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 8_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .name("NV kiên trì diệt ác")
                                                 .detail("")
@@ -742,7 +741,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 80_000_000 },
-                                                                { LUONG_ID, 300 },
+                                                                
                                                 })
                                                 .name("NV Giết Tinh Anh")
                                                 .detail("")
@@ -775,7 +774,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 80_000_000 },
-                                                                { LUONG_ID, 500 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 10, 1, -1
@@ -808,7 +807,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 80_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 200, 200, -1
@@ -832,7 +831,7 @@ public class TaskList {
                                                 .rewards(new int[][] {
                                                                 { 225, 1 },
                                                                 { EXP_ID, 80_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .name("NV rèn luyện ý chí")
                                                 .detail("")
@@ -870,7 +869,7 @@ public class TaskList {
                                                 .rewards(new int[][] {
                                                                 { 226, 1 },
                                                                 { EXP_ID, 80_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
 
                                                 })
                                                 .build(),
@@ -893,7 +892,7 @@ public class TaskList {
                                                 .rewards(new int[][] {
 
                                                                 { EXP_ID, 80_000_000 },
-                                                                { LUONG_ID, 200 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 99, -1,
@@ -921,7 +920,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 100_000_000 },
-                                                                { LUONG_ID, 300 },
+                                                                
                                                 })
                                                 .subNames(new String[] {
                                                                 "Trình độ đạt cấp 55",
@@ -945,7 +944,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 100_000_000 },
-                                                                { LUONG_ID, 300 },
+                                                                
                                                 })
                                                 .name("NV Thu thập oan hồn")
                                                 .detail("")
@@ -972,7 +971,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 100_000_000 },
-                                                                { LUONG_ID, 300 },
+                                                                
                                                 })
                                                 .name("NV Thử thách của Guriin")
                                                 .detail("")
@@ -997,7 +996,7 @@ public class TaskList {
                                                                 "Nếu con muốn thành con rễ của ta thì hãy chấp nhận thử thách này ?")
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 100_000_000 },
-                                                                { LUONG_ID, 300 },
+                                                                
                                                 })
                                                 .name("NV Thắp sáng bản làng")
                                                 .detail("")
@@ -1049,7 +1048,7 @@ public class TaskList {
                                                 .rewards(new int[][] {
                                                                 { 227, 1 },
                                                                 { EXP_ID, 100_000_000 },
-                                                                { LUONG_ID, 500 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 10, 1, 100, -1
@@ -1085,7 +1084,7 @@ public class TaskList {
                                                 })
                                                 .rewards(new int[][] {
                                                                 { EXP_ID, 100_000_000 },
-                                                                { LUONG_ID, 500 },
+                                                                
                                                 })
                                                 .bypass(true)
                                                 .build(),
@@ -1107,7 +1106,7 @@ public class TaskList {
                                                 .rewards(new int[][] {
                                                                 { 228, 1 },
                                                                 { EXP_ID, 100_000_000 },
-                                                                { LUONG_ID, 500 },
+                                                                
                                                 })
                                                 .build(),
 
@@ -1126,7 +1125,7 @@ public class TaskList {
                                                 .rewards(new int[][] {
                                                                 { 228, 1 },
                                                                 { EXP_ID, 100_000_000 },
-                                                                { LUONG_ID, 500 },
+                                                                
                                                 })
                                                 .counts(new int[] {
                                                                 -1, 50, -1

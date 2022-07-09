@@ -175,6 +175,9 @@ public class MenuController {
                     }
 
                 }
+            } else if (ninja.getTaskId() == 3 && ninja.getTaskIndex() == 0) {
+                // for tabemono
+                menuId++;
             }
         }
 

@@ -12,3 +12,6 @@ target/
 codefix/node_modules/
 
 .env
+
+# ignore cache server
+.cache/

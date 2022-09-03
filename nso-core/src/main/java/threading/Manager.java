@@ -385,23 +385,18 @@ public class Manager {
             this.PORT = 14444;
         }
 
-        this.mysql_host = System.getenv("DB_HOST");
-        this.mysql_port = System.getenv("DB_PORT");
-        this.mysql_user = System.getenv("DB_USER");
-        this.mysql_pass = System.getenv("DB_PASS");
-        this.mysql_database = System.getenv("DB_DATABASE");
-        // this.mysql_host = "localhost";
-        // this.mysql_port = "3306";
-        // this.mysql_user = "root";
-        // this.mysql_pass = "01676940253";
-        // this.mysql_database = "nja";
+        this.mysql_host = Optional.ofNullable(System.getenv("DB_HOST")).orElse("localhost");
+        this.mysql_port = Optional.ofNullable(System.getenv("DB_PORT")).orElse("3306");
+        this.mysql_user = Optional.ofNullable(System.getenv("DB_USER")).orElse("root");
+        this.mysql_pass = Optional.ofNullable(System.getenv("DB_PASS")).orElse("01676940253");
+        this.mysql_database = Optional.ofNullable(System.getenv("DB_DATABASE")).orElse("nja");
 
         try {
             util.setDebug(Boolean.parseBoolean(System.getenv("DEBUG")));
         } catch (Exception e) {
             util.setDebug(false);
         }
-        // util.setDebug(true);
+        util.setDebug(true);
         if (configMap.containsKey("version-Data")) {
             this.vsData = Byte.parseByte(configMap.get("version-Data"));
         } else {

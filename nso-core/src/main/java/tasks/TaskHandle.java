@@ -1054,6 +1054,20 @@ public class TaskHandle {
                 ninja.upMainTask();
                 return true;
             }
+        } else if (ninja.getTaskId() == 15) {
+            if (ninja.getTaskIndex() == 1 && npcId == 14) {
+                ninja.upMainTask();
+                Service.openUISay(ninja, npcId, "Cảm ơn con! Con thật là tốt bụng");
+                return true;
+            } else if (ninja.getTaskIndex() == 2 && npcId == 15) {
+                ninja.upMainTask();
+                Service.openUISay(ninja, npcId, "Cảm ơn con! đã lâu rồi ta không có gặp cô Furoya");
+                return true;
+            } else if (ninja.getTaskIndex() == 3 && npcId == 16) {
+                ninja.upMainTask();
+                Service.openUISay(ninja, npcId, "Cảm ơn con! Hãy quay về báo lại cho cô Furoya nhé!");
+                return true;
+            }
         }
         return false;
     }

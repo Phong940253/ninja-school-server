@@ -162,18 +162,38 @@ public class MenuController {
                         p.nj.enterSamePlace(place, npc);
                         return;
                     }
-                } else if (ninja.getTaskId() == 15 && ninja.getTaskIndex() >= 1) {
-                    if (menuId == -1) {
-                        // Nhiem vu giao thu
-                        if (ninja.getTaskIndex() == 1 && npcId == 14) {
+                }
+            } else if (ninja.getTaskId() == 15 && ninja.getTaskIndex() >= 1) {
+                if (menuId == -1) {
+                    // Nhiem vu giao thu
+                    if (ninja.getTaskIndex() == 1 && npcId == 14) {
+                        if (p.nj.hasItemInBag(214)) {
                             p.nj.removeItemBags(214, 1);
-                        } else if (ninja.getTaskIndex() == 2 && npcId == 15) {
-                            p.nj.removeItemBags(214, 1);
-                        } else if (ninja.getTaskIndex() == 3 && npcId == 16) {
-                            p.nj.removeItemBags(214, 1);
-                        }
-                    }
+                            boolean npcTalking = TaskHandle.npcTalk(ninja, menuId, npcId);
+                            if (npcTalking) {
 
+                                return;
+                            }
+                        } else p.session.sendMessageLog("Bạn không có thư giao nhiệm vụ");
+                    } else if (ninja.getTaskIndex() == 2 && npcId == 15) {
+                        if (p.nj.hasItemInBag(214)) {
+                            p.nj.removeItemBags(214, 1);
+                            boolean npcTalking = TaskHandle.npcTalk(ninja, menuId, npcId);
+                            if (npcTalking) {
+
+                                return;
+                            }
+                        } else p.session.sendMessageLog("Bạn không có thư giao nhiệm vụ");
+                    } else if (ninja.getTaskIndex() == 3 && npcId == 16) {
+                        if (p.nj.hasItemInBag(214)) {
+                            p.nj.removeItemBags(214, 1);
+                            boolean npcTalking = TaskHandle.npcTalk(ninja, menuId, npcId);
+                            if (npcTalking) {
+
+                                return;
+                            }
+                        } else p.session.sendMessageLog("Bạn không có thư giao nhiệm vụ");
+                    }
                 }
             } else if (ninja.getTaskId() == 3 && ninja.getTaskIndex() == 0) {
                 // for tabemono

@@ -813,7 +813,7 @@ public class GameScr {
         }
 
         if (type == 1) {
-            percent *= (int) 1.5;
+            percent = (int) (percent * 1.5);
             gold = GameScr.goldUps[item.getUpgrade()];
         }
         if (coins > p.nj.yen + p.nj.xu || gold > p.luong) {

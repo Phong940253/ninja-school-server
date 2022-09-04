@@ -747,6 +747,17 @@ public class Body implements ISoloer {
     }
 
     @NotNull
+    public List<Integer> getListEffID(final byte efftype) {
+        final List<Integer> list = new ArrayList<>();
+        for (byte i = 0; i < this.getVeff().size(); ++i) {
+            if (efftype == this.getVeff().get(i).template.type) {
+                list.add(this.getVeff().get(i).template.id);
+            }
+        }
+        return list;
+    }
+
+    @NotNull
     private Map<@NotNull Integer, @NotNull Skill> cacheSkill = new ConcurrentHashMap<>();
 
     @Nullable

@@ -396,7 +396,7 @@ public class Manager {
         } catch (Exception e) {
             util.setDebug(false);
         }
-        util.setDebug(true);
+//        util.setDebug(true);
         if (configMap.containsKey("version-Data")) {
             this.vsData = Byte.parseByte(configMap.get("version-Data"));
         } else {

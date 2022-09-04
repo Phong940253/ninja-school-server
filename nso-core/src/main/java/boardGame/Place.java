@@ -2134,8 +2134,22 @@ public class Place {
         }
         int xpnew = (Math.max(dame, 1000) / 50) * body.getLevel() * 5;
         if (body.getEffType((byte) 18) != null) {
-            xpnew *= body.getEffType((byte) 18).param;
+            for (Integer effID : body.getListEffID((byte) 18)) {
+                switch (effID) {
+                    case 22:
+                        xpnew *= 2;
+                        break;
+                    case 32:
+                        xpnew *= 3;
+                        break;
+                    case 33:
+                        xpnew *= 4;
+                        break;
+                }
+            }
+//            xpnew *= body.getEffType((byte) 18).param;
         }
+
         if (curMob.lvboss == 1) {
             xpnew *= 2;
         } else if (curMob.lvboss == 2) {

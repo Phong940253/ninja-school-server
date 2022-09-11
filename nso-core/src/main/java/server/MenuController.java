@@ -737,26 +737,22 @@ public class MenuController {
                                 final List<int[]> data = MenuController.nangCapMat.keySet().stream()
                                         .map(s -> nangCapMat.get(s)).collect(Collectors.toList());
 
-                                String s = "";
+                                StringBuilder s = new StringBuilder();
                                 if (p.nj.getTasks()[NHIEM_VU_DANH_VONG] != null) {
                                     TaskOrder task = p.nj.getTasks()[NHIEM_VU_DANH_VONG];
 
-                                    s += "Thông tin nhiệm vụ danh vọng (" + p.nj.nvdvCount + "/"
-                                            + TaskOrder.MAX_NVDV_PER_DAY + ") : \n";
-                                    s += task.nvdvText() + "\n";
-                                    s += "\n";
-                                    s += "--------------------------------\n";
-                                    s += "\n";
+                                    s.append("Thông tin nhiệm vụ danh vọng (").append(p.nj.nvdvCount).append("/").append(TaskOrder.MAX_NVDV_PER_DAY).append(") : \n");
+                                    s.append(task.nvdvText()).append("\n");
+                                    s.append("\n");
+                                    s.append("--------------------------------\n");
+                                    s.append("\n");
                                 }
-                                s += "Tham gia chiến trường để có thể nhận mắt 1\n";
+                                s.append("Tham gia chiến trường để có thể nhận mắt 1\n");
                                 for (int i = 0, dataSize = data.size(); i < dataSize; i++) {
                                     int[] datum = data.get(i);
-                                    s += "-Nâng cấp mắt " + (i + 2) + " dùng " + datum[0] + " viên đá danh vọng cấp "
-                                            + (i + 2) + " nâng thường " + datum[1] + " xu xác suất " + datum[2]
-                                            + "%, VIP "
-                                            + datum[1] + " xu " + datum[3] + " lượng xác suất " + datum[4] + "% \n\n";
+                                    s.append("-Nâng cấp mắt ").append(i + 2).append(" dùng ").append(datum[0]).append(" viên đá danh vọng cấp ").append(i + 2).append(" nâng thường ").append(datum[1]).append(" xu xác suất ").append(datum[2]).append("%, VIP ").append(datum[1]).append(" xu ").append(datum[3]).append(" lượng xác suất ").append(datum[4]).append("% \n\n");
                                 }
-                                Service.sendThongBao(p.nj, s);
+                                Service.sendThongBao(p.nj, s.toString());
                                 break;
                             default:
                                 break;
@@ -2988,37 +2984,36 @@ public class MenuController {
                 }
             } else {
                 if (index == EventItem.entrys.length) {
-                    String huongDan = "";
+                    StringBuilder huongDan = new StringBuilder();
                     for (EventItem entry : EventItem.entrys) {
-                        String s = "";
+                        StringBuilder s = new StringBuilder();
                         Recipe[] inputs = entry.getInputs();
                         for (int i = 0, inputsLength = inputs.length; i < inputsLength; i++) {
                             Recipe input = inputs[i];
                             val data = input.getItem().getData();
-                            s += input.getCount() + " " + data.name;
+                            s.append(input.getCount()).append(" ").append(data.name);
                             if (inputsLength != inputs.length - 1) {
-                                s += ",";
+                                s.append(",");
                             }
 
                         }
-                        huongDan += "Để làm " + entry.getOutput().getCount() + " "
-                                + entry.getOutput().getItem().getData().name + " cần\n\t" + s;
+                        huongDan.append("Để làm ").append(entry.getOutput().getCount()).append(" ").append(entry.getOutput().getItem().getData().name).append(" cần\n\t").append(s);
                         if (entry.getCoin() > 0) {
-                            huongDan += ", " + entry.getCoin() + " xu";
+                            huongDan.append(", ").append(entry.getCoin()).append(" xu");
                         }
 
                         if (entry.getCoinLock() > 0) {
-                            huongDan += ", " + entry.getCoinLock() + " yên";
+                            huongDan.append(", ").append(entry.getCoinLock()).append(" yên");
                         }
 
                         if (entry.getGold() > 0) {
-                            huongDan += ", " + entry.getGold() + " lượng";
+                            huongDan.append(", ").append(entry.getGold()).append(" lượng");
                         }
-                        huongDan += "\n";
+                        huongDan.append("\n");
 
                     }
 
-                    Service.sendThongBao(p.nj, huongDan);
+                    Service.sendThongBao(p.nj, huongDan.toString());
                 } else {
                     // Top su kien
                     val itemNames = new String[EventItem.entrys.length];

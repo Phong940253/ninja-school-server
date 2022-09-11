@@ -10,6 +10,8 @@ import threading.Server;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class GeninTournament extends Tournament {
@@ -18,7 +20,7 @@ public class GeninTournament extends Tournament {
     protected GeninTournament() {
         super(100, 1);
         Properties properties = new Properties();
-        try (InputStream inputStream = new FileInputStream("application.properties")) {
+        try (InputStream inputStream = Files.newInputStream(Paths.get("application.properties"))) {
             properties.load(inputStream);
             GENIN_REWARDS = Mapper.converter.readValue(properties.getProperty("reward-dia-bang"),
                     new TypeReference<int[][]>() {

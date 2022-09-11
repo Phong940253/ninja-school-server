@@ -131,55 +131,55 @@ public class BXHManager {
     }
 
     public static String getStringBXH(final int type) {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         switch (type) {
             case 0: {
                 if (BXHManager.bangXH[type].isEmpty()) {
-                    str = "Chưa có thông tin";
+                    str = new StringBuilder("Chưa có thông tin");
                     break;
                 }
                 for (final Entry bxh : BXHManager.bangXH[type]) {
-                    str = str + bxh.index + ". " + bxh.name + ": " + util.getFormatNumber(bxh.nXH[0]) + " yên - cấp: " + bxh.nXH[1] + "\n";
+                    str.append(bxh.index).append(". ").append(bxh.name).append(": ").append(util.getFormatNumber(bxh.nXH[0])).append(" yên - cấp: ").append(bxh.nXH[1]).append("\n");
                 }
                 break;
             }
             case 1: {
                 if (BXHManager.bangXH[type].isEmpty()) {
-                    str = "Chưa có thông tin";
+                    str = new StringBuilder("Chưa có thông tin");
                     break;
                 }
                 for (final Entry bxh : BXHManager.bangXH[type]) {
-                    str = str + bxh.index + ". " + bxh.name + ": " + util.getFormatNumber(bxh.nXH[0]) + " kinh nghiệm - cấp: " + bxh.nXH[1] + "\n";
+                    str.append(bxh.index).append(". ").append(bxh.name).append(": ").append(util.getFormatNumber(bxh.nXH[0])).append(" kinh nghiệm - cấp: ").append(bxh.nXH[1]).append("\n");
                 }
                 break;
             }
             case 2: {
                 if (BXHManager.bangXH[type].isEmpty()) {
-                    str = "Chưa có thông tin";
+                    str = new StringBuilder("Chưa có thông tin");
                     break;
                 }
                 for (final Entry bxh : BXHManager.bangXH[type]) {
                     final ClanManager clan = ClanManager.getClanByName(bxh.name);
                     if (clan != null) {
-                        str = str + bxh.index + ". Gia tộc " + bxh.name + " trình độ cấp " + bxh.nXH[0] + " do " + clan.getmain_name() + " làm tộc trưởng, thành viên " + clan.members.size() + "/" + clan.getMemMax() + "\n";
+                        str.append(bxh.index).append(". Gia tộc ").append(bxh.name).append(" trình độ cấp ").append(bxh.nXH[0]).append(" do ").append(clan.getmain_name()).append(" làm tộc trưởng, thành viên ").append(clan.members.size()).append("/").append(clan.getMemMax()).append("\n");
                     } else {
-                        str = str + bxh.index + ". Gia tộc " + bxh.name + " trình độ cấp " + bxh.nXH[0] + " đã bị giải tán\n";
+                        str.append(bxh.index).append(". Gia tộc ").append(bxh.name).append(" trình độ cấp ").append(bxh.nXH[0]).append(" đã bị giải tán\n");
                     }
                 }
                 break;
             }
             case 3: {
                 if (BXHManager.bangXH[type].isEmpty()) {
-                    str = "Chưa có thông tin";
+                    str = new StringBuilder("Chưa có thông tin");
                     break;
                 }
                 for (final Entry bxh : BXHManager.bangXH[type]) {
-                    str = str + bxh.index + ". " + bxh.name + " nhận được " + util.getFormatNumber(bxh.nXH[0]) + " " + ItemData.ItemDataId((int) bxh.nXH[1]).name + "\n";
+                    str.append(bxh.index).append(". ").append(bxh.name).append(" nhận được ").append(util.getFormatNumber(bxh.nXH[0])).append(" ").append(ItemData.ItemDataId((int) bxh.nXH[1]).name).append("\n");
                 }
                 break;
             }
         }
-        return str;
+        return str.toString();
     }
 
     static {

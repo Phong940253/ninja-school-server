@@ -214,11 +214,9 @@ public class ClanBattle extends GBattle {
             builder.append("Hai gia tộc hoà nhau");
         }
 
-        builder.append("\n").
-                append(getClanNamePhe1() + " ")
+        builder.append("\n").append(getClanNamePhe1()).append(" ")
                 .append(bachGiaPoint)
-                .append("\n")
-                .append(getClanNamePhe2() + " ")
+                .append("\n").append(getClanNamePhe2()).append(" ")
                 .append(hacGiaPoint).append("\n");
 
         final List<IGlobalBattler> highest = Stream.concat(hacgia.stream(), bachgia.stream())

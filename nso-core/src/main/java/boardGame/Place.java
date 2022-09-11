@@ -1,7 +1,6 @@
 package boardGame;
 
 import lombok.SneakyThrows;
-import lombok.val;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import patch.*;
@@ -20,14 +19,12 @@ import server.Service;
 import server.util;
 import tasks.TaskHandle;
 import tasks.TaskTemplate;
-import tasks.Text;
 import threading.Manager;
 import threading.Map;
 import threading.Message;
 import threading.Server;
 
 import java.io.DataOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.*;

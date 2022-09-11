@@ -2,7 +2,6 @@ package server;
 
 import real.Ninja;
 import real.ClanManager;
-import real.Item;
 import real.ItemData;
 import real.PlayerManager;
 import java.io.IOException;

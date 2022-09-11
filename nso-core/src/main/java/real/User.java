@@ -29,11 +29,9 @@ import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -2881,7 +2879,7 @@ public class User extends Actor implements SendMessage {
 
             System.out.println("Send 'HTTP GET' request to : " + url);
 
-            Integer responseCode = connection.getResponseCode();
+            int responseCode = connection.getResponseCode();
             System.out.println("Response Code : " + responseCode);
 
             Thread.sleep(500);
@@ -2938,9 +2936,9 @@ public class User extends Actor implements SendMessage {
 
             this.cardDCoins = null;
 
-            String ss = statuses[0] + "";
+            StringBuilder ss = new StringBuilder(statuses[0] + "");
             for (int i = 1; i < statuses.length; i++) {
-                ss += "', '" + statuses[i];
+                ss.append("', '").append(statuses[i]);
             }
 
             Service.showWait("Đang dò thông tin thẻ nạp", this);
@@ -2982,18 +2980,14 @@ public class User extends Actor implements SendMessage {
             this.loadCardDCoins(CardDCoin.getAllCardStatues());
 
             if (cardDCoins != null && cardDCoins.length > 0) {
-                String str = "";
+                StringBuilder str = new StringBuilder();
                 int idx = 1;
                 for (final CardDCoin card : cardDCoins) {
-                    str += idx + ". " + card.cardType + " - " + util.getFormatNumber(card.cardValue)
-                            + " VND. TG: " + util.toDateString(card.releaseDate)
-                            + " Status: "
-                            + card.getStatusString()
-                            + ".\n";
+                    str.append(idx).append(". ").append(card.cardType).append(" - ").append(util.getFormatNumber(card.cardValue)).append(" VND. TG: ").append(util.toDateString(card.releaseDate)).append(" Status: ").append(card.getStatusString()).append(".\n");
                     idx += 1;
                 }
 
-                return str;
+                return str.toString();
             }
         } catch (Exception e) {
             e.printStackTrace();

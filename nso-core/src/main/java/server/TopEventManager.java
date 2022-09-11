@@ -65,16 +65,16 @@ public class TopEventManager {
     }
 
     public static String getStringTXH(final int eventItemId) {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         if (TopEventManager.topXH.get(eventItemId).isEmpty()) {
-            str = "Chưa có thông tin";
+            str = new StringBuilder("Chưa có thông tin");
         } else {
             for (final EventEntry txh : TopEventManager.topXH.get(eventItemId)) {
-                str += txh.index + ". " + txh.name + ": " + txh.count + " lần.\n";
+                str.append(txh.index).append(". ").append(txh.name).append(": ").append(txh.count).append(" lần.\n");
             }
         }
 
-        return str;
+        return str.toString();
     }
 
     public static class EventEntry {

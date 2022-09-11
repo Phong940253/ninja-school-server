@@ -2,7 +2,6 @@ package threading;
 
 import java.lang.Exception;
 import io.sentry.Sentry;
-import com.sun.management.OperatingSystemMXBean;
 import io.Session;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
@@ -10,7 +9,6 @@ import battle.GBattle;
 import patch.Resource;
 import candybattle.CandyBattleManager;
 import interfaces.IBattle;
-import patch.RmiRemoteImpl;
 import tournament.GeninTournament;
 import tournament.KageTournament;
 import tournament.Tournament;
@@ -18,14 +16,11 @@ import real.*;
 import server.*;
 
 import java.io.IOException;
-import java.lang.management.ManagementFactory;
 import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
-import java.rmi.Naming;
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.stream.Collectors;
 import java.util.Calendar;
 import java.util.Date;
@@ -120,12 +115,12 @@ public class Server {
             final short moment = (short) rightNow.get(Manager.BOSS_WAIT_TIME_UNIT);
             if (moment % Server.DURATION_TIME_BOSS_REFRESH == 0) {
                 if (!Server.isRefreshBoss) {
-                    String textchat = "Thần thú đã suất hiện tại";
+                    StringBuilder textchat = new StringBuilder("Thần thú đã suất hiện tại");
                     for (byte k = 0; k < util.nextInt(Server.MAX_BOSS); ++k) {
                         final Map map = Manager.getMapid(Server.mapBoss75[util.nextInt(Server.mapBoss75.length)]);
                         if (map != null) {
                             map.refreshBoss(util.debug ? 0 : util.nextInt(1, 17));
-                            textchat = textchat + " " + map.template.name;
+                            textchat.append(" ").append(map.template.name);
                             Server.isRefreshBoss = true;
                         }
                     }
@@ -133,7 +128,7 @@ public class Server {
                         final Map map = Manager.getMapid(Server.mapBoss65[util.nextInt(Server.mapBoss65.length)]);
                         if (map != null) {
                             map.refreshBoss(util.debug ? 0 : util.nextInt(1, 17));
-                            textchat = textchat + ", " + map.template.name;
+                            textchat.append(", ").append(map.template.name);
                             Server.isRefreshBoss = true;
                         }
                     }
@@ -141,7 +136,7 @@ public class Server {
                         final Map map = Manager.getMapid(Server.mapBoss55[util.nextInt(Server.mapBoss55.length)]);
                         if (map != null) {
                             map.refreshBoss(util.debug ? 0 : util.nextInt(1, 17));
-                            textchat = textchat + ", " + map.template.name;
+                            textchat.append(", ").append(map.template.name);
                             Server.isRefreshBoss = true;
                         }
                     }
@@ -149,7 +144,7 @@ public class Server {
                         final Map map = Manager.getMapid(Server.mapBoss45[util.nextInt(Server.mapBoss45.length)]);
                         if (map != null) {
                             map.refreshBoss(util.debug ? 0 : util.nextInt(1, 17));
-                            textchat = textchat + ", " + map.template.name;
+                            textchat.append(", ").append(map.template.name);
                             Server.isRefreshBoss = true;
                         }
                     }
@@ -157,7 +152,7 @@ public class Server {
                         final Map map = Manager.getMapid(Server.mapBossVDMQ[k]);
                         if (map != null) {
                             map.refreshBoss(util.debug ? 0 : util.nextInt(1, 17));
-                            textchat = textchat + ", " + map.template.name;
+                            textchat.append(", ").append(map.template.name);
                             Server.isRefreshBoss = true;
                         }
                     }
@@ -166,12 +161,12 @@ public class Server {
                         val map = Manager.getMapid(i);
                         if (map != null) {
                             map.refreshBoss(util.nextInt(1, 3));
-                            textchat = textchat + ", " + map.template.name;
+                            textchat.append(", ").append(map.template.name);
                             Server.isRefreshBoss = true;
                         }
                     }
                     try {
-                        Manager.chatKTG(textchat);
+                        Manager.chatKTG(textchat.toString());
                     } catch (IOException e) {
                     }
                 }

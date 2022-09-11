@@ -2,17 +2,11 @@ package patch;
 
 import com.lib.rmi.RmiRemote;
 import lombok.SneakyThrows;
-import lombok.val;
 import org.jetbrains.annotations.NotNull;
-import real.*;
-import server.GameScr;
 
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-
-import static real.ItemData.EXP_ID;
-import static real.ItemData.itemDefault;
 
 public class RmiRemoteImpl extends UnicastRemoteObject implements RmiRemote, Serializable {
     public RmiRemoteImpl() throws RemoteException {

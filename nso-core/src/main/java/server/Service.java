@@ -14,7 +14,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import real.User;
 import tasks.TaskList;
 import tasks.TaskTemplate;
 import threading.Manager;

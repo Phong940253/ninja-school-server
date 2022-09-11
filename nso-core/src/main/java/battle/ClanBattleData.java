@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import static battle.ClanBattle.*;
-import static interfaces.IBattle.WAITING_STATE;
 
 @Getter
 @Setter

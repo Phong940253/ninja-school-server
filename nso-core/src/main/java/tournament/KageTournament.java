@@ -10,6 +10,8 @@ import threading.Server;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class KageTournament extends Tournament {
@@ -20,7 +22,7 @@ public class KageTournament extends Tournament {
     protected KageTournament() {
         super(100, 2);
         Properties properties = new Properties();
-        try (InputStream inputStream = new FileInputStream("application.properties")) {
+        try (InputStream inputStream = Files.newInputStream(Paths.get("application.properties"))) {
             properties.load(inputStream);
             KAGE_REWARDS = Mapper.converter.readValue(properties.getProperty("reward-thien-bang"), new TypeReference<int[][]>() {
             });

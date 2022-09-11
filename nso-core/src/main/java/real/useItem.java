@@ -3,17 +3,13 @@ package real;
 import boardGame.Place;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import lombok.val;
 import clan.ClanThanThu;
-import server.GameCanvas;
 import server.MenuController;
 import server.Service;
 import tasks.TaskHandle;
-import tasks.Text;
 import threading.Message;
 import patch.Constants;
 import patch.EventItem;

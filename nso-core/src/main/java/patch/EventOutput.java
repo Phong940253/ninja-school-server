@@ -2,7 +2,6 @@ package patch;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.val;
 import org.jetbrains.annotations.NotNull;
 import real.Item;
 import real.ItemData;

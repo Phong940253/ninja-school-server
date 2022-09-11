@@ -378,12 +378,12 @@ public class RotationLuck extends Thread {
     }
 
     public String sucsacText() {
-        String text = "";
+        StringBuilder text = new StringBuilder();
         for (int i = 0; i < this.sucsacs.size(); i++) {
-            text += "Kết quả xúc sắc " + (i + 1) + " là: " + this.sucsacs.get(i) + "\n";
+            text.append("Kết quả xúc sắc ").append(i + 1).append(" là: ").append(this.sucsacs.get(i)).append("\n");
         }
 
-        return text;
+        return text.toString();
     }
 
     protected void luckMessage(final User p) throws IOException {

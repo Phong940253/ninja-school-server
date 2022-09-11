@@ -5,7 +5,6 @@ import real.MapTemplate;
 import threading.Map;
 import threading.Server;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 import static interfaces.IBattle.*;

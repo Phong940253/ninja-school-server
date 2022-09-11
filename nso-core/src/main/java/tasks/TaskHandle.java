@@ -20,56 +20,56 @@ public class TaskHandle {
 
             case 0:
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 0),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             case 1:
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 7),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             case 2:
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 27),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             case 3:
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 30),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             case 4:
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 35),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             case 5:
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 38),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             case 6:
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 41),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             case 7:
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 44),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             case 8:
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 110),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             case 9: {
                 Service.openUIConfirm(ninja, npcTemplateId, "Nâng cao thể lực bản thân con có muốn nhận không",
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             }
             case 10: {
                 final TaskTemplate taskTemplate = taskTemplates[ninja.getTaskId()];
                 Service.openUIConfirm(ninja, npcTemplateId, "Bài học đầu tiên của con là "
-                        + String.join(", ", taskTemplate.getSubNames()) + ".",
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                                + String.join(", ", taskTemplate.getSubNames()) + ".",
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
                 break;
             }
             default:
                 final TaskTemplate taskTemplate = taskTemplates[ninja.getTaskId()];
                 Service.openUIConfirm(ninja, npcTemplateId, taskTemplate.getNpcTalk(),
-                        new String[] { Text.get(0, 10), Text.get(0, 11) });
+                        new String[]{Text.get(0, 10), Text.get(0, 11)});
         }
     }
 
@@ -77,66 +77,66 @@ public class TaskHandle {
         if (ninja.getTaskId() == 1) {
             if (ninja.getTaskIndex() == 0) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 12),
-                        new String[] { Talk.getTask(0, 17), Talk.getTask(0, 18), Talk.getTask(0, 19) });
+                        new String[]{Talk.getTask(0, 17), Talk.getTask(0, 18), Talk.getTask(0, 19)});
             } else if (ninja.getTaskIndex() == 1) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 13),
-                        new String[] { Talk.getTask(0, 19), Talk.getTask(0, 20), Talk.getTask(0, 18) });
+                        new String[]{Talk.getTask(0, 19), Talk.getTask(0, 20), Talk.getTask(0, 18)});
             } else if (ninja.getTaskIndex() == 2) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 14),
-                        new String[] { Talk.getTask(0, 18), Talk.getTask(0, 17), Talk.getTask(0, 21) });
+                        new String[]{Talk.getTask(0, 18), Talk.getTask(0, 17), Talk.getTask(0, 21)});
             } else if (ninja.getTaskIndex() == 3) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 15),
-                        new String[] { Talk.getTask(0, 22), Talk.getTask(0, 18), Talk.getTask(0, 23) });
+                        new String[]{Talk.getTask(0, 22), Talk.getTask(0, 18), Talk.getTask(0, 23)});
             } else if (ninja.getTaskIndex() == 4) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 16),
-                        new String[] { Talk.getTask(0, 20), Talk.getTask(0, 23), Talk.getTask(0, 19) });
+                        new String[]{Talk.getTask(0, 20), Talk.getTask(0, 23), Talk.getTask(0, 19)});
             }
         } else if (ninja.getTaskId() == 7) {
             if (ninja.getTaskIndex() == 1) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 49),
-                        new String[] { Talk.getTask(0, 46), Talk.getTask(0, 47), Talk.getTask(0, 48) });
+                        new String[]{Talk.getTask(0, 46), Talk.getTask(0, 47), Talk.getTask(0, 48)});
             } else if (ninja.getTaskIndex() == 2) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 50),
-                        new String[] { Talk.getTask(0, 51), Talk.getTask(0, 52), Talk.getTask(0, 53) });
+                        new String[]{Talk.getTask(0, 51), Talk.getTask(0, 52), Talk.getTask(0, 53)});
             } else if (ninja.getTaskIndex() == 3) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 54),
-                        new String[] { Talk.getTask(0, 55), Talk.getTask(0, 56), Talk.getTask(0, 57) });
+                        new String[]{Talk.getTask(0, 55), Talk.getTask(0, 56), Talk.getTask(0, 57)});
             } else if (ninja.getTaskIndex() == 4) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 58),
-                        new String[] { Talk.getTask(0, 59), Talk.getTask(0, 60), Talk.getTask(0, 61) });
+                        new String[]{Talk.getTask(0, 59), Talk.getTask(0, 60), Talk.getTask(0, 61)});
             } else if (ninja.getTaskIndex() == 5) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 62),
-                        new String[] { Talk.getTask(0, 63), Talk.getTask(0, 64), Talk.getTask(0, 65) });
+                        new String[]{Talk.getTask(0, 63), Talk.getTask(0, 64), Talk.getTask(0, 65)});
             } else if (ninja.getTaskIndex() == 6) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 67),
-                        new String[] { Talk.getTask(0, 68), Talk.getTask(0, 69), Talk.getTask(0, 70) });
+                        new String[]{Talk.getTask(0, 68), Talk.getTask(0, 69), Talk.getTask(0, 70)});
             } else if (ninja.getTaskIndex() == 7) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 71),
-                        new String[] { Talk.getTask(0, 72), Talk.getTask(0, 73), Talk.getTask(0, 74) });
+                        new String[]{Talk.getTask(0, 72), Talk.getTask(0, 73), Talk.getTask(0, 74)});
             } else if (ninja.getTaskIndex() == 8) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 75),
-                        new String[] { Talk.getTask(0, 76), Talk.getTask(0, 77), Talk.getTask(0, 78) });
+                        new String[]{Talk.getTask(0, 76), Talk.getTask(0, 77), Talk.getTask(0, 78)});
             } else if (ninja.getTaskIndex() == 9) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 79),
-                        new String[] { Talk.getTask(0, 80), Talk.getTask(0, 81), Talk.getTask(0, 82) });
+                        new String[]{Talk.getTask(0, 80), Talk.getTask(0, 81), Talk.getTask(0, 82)});
             } else if (ninja.getTaskIndex() == 10) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 83),
-                        new String[] { Talk.getTask(0, 84), Talk.getTask(0, 85), Talk.getTask(0, 86) });
+                        new String[]{Talk.getTask(0, 84), Talk.getTask(0, 85), Talk.getTask(0, 86)});
             } else if (ninja.getTaskIndex() == 11) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 88),
-                        new String[] { Talk.getTask(0, 89), Talk.getTask(0, 90), Talk.getTask(0, 91) });
+                        new String[]{Talk.getTask(0, 89), Talk.getTask(0, 90), Talk.getTask(0, 91)});
             } else if (ninja.getTaskIndex() == 12) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 92),
-                        new String[] { Talk.getTask(0, 93), Talk.getTask(0, 94), Talk.getTask(0, 95) });
+                        new String[]{Talk.getTask(0, 93), Talk.getTask(0, 94), Talk.getTask(0, 95)});
             } else if (ninja.getTaskIndex() == 13) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 96),
-                        new String[] { Talk.getTask(0, 97), Talk.getTask(0, 98), Talk.getTask(0, 99) });
+                        new String[]{Talk.getTask(0, 97), Talk.getTask(0, 98), Talk.getTask(0, 99)});
             } else if (ninja.getTaskIndex() == 14) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 100),
-                        new String[] { Talk.getTask(0, 101), Talk.getTask(0, 102), Talk.getTask(0, 103) });
+                        new String[]{Talk.getTask(0, 101), Talk.getTask(0, 102), Talk.getTask(0, 103)});
             } else if (ninja.getTaskIndex() == 15) {
                 Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 104),
-                        new String[] { Talk.getTask(0, 105), Talk.getTask(0, 106), Talk.getTask(0, 107) });
+                        new String[]{Talk.getTask(0, 105), Talk.getTask(0, 106), Talk.getTask(0, 107)});
             }
         }
     }
@@ -343,41 +343,41 @@ public class TaskHandle {
                     if (menuId == 1) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, npcTemplateId, Talk.getTask(0, 13),
-                                new String[] { Talk.getTask(0, 19), Talk.getTask(0, 20), Talk.getTask(0, 18) });
+                                new String[]{Talk.getTask(0, 19), Talk.getTask(0, 20), Talk.getTask(0, 18)});
                     } else {
                         Service.openUIConfirm(ninja, npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 12) }),
-                                new String[] { Talk.getTask(0, 17), Talk.getTask(0, 18), Talk.getTask(0, 19) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 12)}),
+                                new String[]{Talk.getTask(0, 17), Talk.getTask(0, 18), Talk.getTask(0, 19)});
                     }
                 } else if (ninja.getTaskIndex() == 1) {
                     if (menuId == 0) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 14),
-                                new String[] { Talk.getTask(0, 18), Talk.getTask(0, 17), Talk.getTask(0, 21) });
+                                new String[]{Talk.getTask(0, 18), Talk.getTask(0, 17), Talk.getTask(0, 21)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 13) }),
-                                new String[] { Talk.getTask(0, 19), Talk.getTask(0, 20), Talk.getTask(0, 18) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 13)}),
+                                new String[]{Talk.getTask(0, 19), Talk.getTask(0, 20), Talk.getTask(0, 18)});
                     }
                 } else if (ninja.getTaskIndex() == 2) {
                     if (menuId == 1) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 15),
-                                new String[] { Talk.getTask(0, 22), Talk.getTask(0, 18), Talk.getTask(0, 23) });
+                                new String[]{Talk.getTask(0, 22), Talk.getTask(0, 18), Talk.getTask(0, 23)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 14) }),
-                                new String[] { Talk.getTask(0, 18), Talk.getTask(0, 17), Talk.getTask(0, 21) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 14)}),
+                                new String[]{Talk.getTask(0, 18), Talk.getTask(0, 17), Talk.getTask(0, 21)});
                     }
                 } else if (ninja.getTaskIndex() == 3) {
                     if (menuId == 2) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 16),
-                                new String[] { Talk.getTask(0, 20), Talk.getTask(0, 23), Talk.getTask(0, 19) });
+                                new String[]{Talk.getTask(0, 20), Talk.getTask(0, 23), Talk.getTask(0, 19)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 15) }),
-                                new String[] { Talk.getTask(0, 22), Talk.getTask(0, 18), Talk.getTask(0, 23) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 15)}),
+                                new String[]{Talk.getTask(0, 22), Talk.getTask(0, 18), Talk.getTask(0, 23)});
                     }
                 } else if (ninja.getTaskIndex() == 4) {
                     if (menuId == 0) {
@@ -385,8 +385,8 @@ public class TaskHandle {
                         Service.openUISay(ninja, (short) npcTemplateId, Talk.getTask(0, 25));
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 16) }),
-                                new String[] { Talk.getTask(0, 20), Talk.getTask(0, 23), Talk.getTask(0, 19) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 16)}),
+                                new String[]{Talk.getTask(0, 20), Talk.getTask(0, 23), Talk.getTask(0, 19)});
                     }
                 }
             } else if (ninja.getTaskId() == 7) {
@@ -394,41 +394,41 @@ public class TaskHandle {
                     if (menuId == 1) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 50),
-                                new String[] { Talk.getTask(0, 51), Talk.getTask(0, 52), Talk.getTask(0, 53) });
+                                new String[]{Talk.getTask(0, 51), Talk.getTask(0, 52), Talk.getTask(0, 53)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 49) }),
-                                new String[] { Talk.getTask(0, 46), Talk.getTask(0, 47), Talk.getTask(0, 48) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 49)}),
+                                new String[]{Talk.getTask(0, 46), Talk.getTask(0, 47), Talk.getTask(0, 48)});
                     }
                 } else if (ninja.getTaskIndex() == 2) {
                     if (menuId == 0) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 54),
-                                new String[] { Talk.getTask(0, 55), Talk.getTask(0, 56), Talk.getTask(0, 57) });
+                                new String[]{Talk.getTask(0, 55), Talk.getTask(0, 56), Talk.getTask(0, 57)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 50) }),
-                                new String[] { Talk.getTask(0, 51), Talk.getTask(0, 52), Talk.getTask(0, 53) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 50)}),
+                                new String[]{Talk.getTask(0, 51), Talk.getTask(0, 52), Talk.getTask(0, 53)});
                     }
                 } else if (ninja.getTaskIndex() == 3) {
                     if (menuId == 1) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 58),
-                                new String[] { Talk.getTask(0, 59), Talk.getTask(0, 60), Talk.getTask(0, 61) });
+                                new String[]{Talk.getTask(0, 59), Talk.getTask(0, 60), Talk.getTask(0, 61)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 54) }),
-                                new String[] { Talk.getTask(0, 55), Talk.getTask(0, 56), Talk.getTask(0, 57) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 54)}),
+                                new String[]{Talk.getTask(0, 55), Talk.getTask(0, 56), Talk.getTask(0, 57)});
                     }
                 } else if (ninja.getTaskIndex() == 4) {
                     if (menuId == 1) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 62),
-                                new String[] { Talk.getTask(0, 63), Talk.getTask(0, 64), Talk.getTask(0, 65) });
+                                new String[]{Talk.getTask(0, 63), Talk.getTask(0, 64), Talk.getTask(0, 65)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 58) }),
-                                new String[] { Talk.getTask(0, 59), Talk.getTask(0, 60), Talk.getTask(0, 61) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 58)}),
+                                new String[]{Talk.getTask(0, 59), Talk.getTask(0, 60), Talk.getTask(0, 61)});
                     }
                 } else if (ninja.getTaskIndex() == 5) {
                     if (menuId == 2) {
@@ -436,48 +436,48 @@ public class TaskHandle {
                         Service.openUISay(ninja, (short) npcTemplateId, Talk.getTask(0, 66));
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 62) }),
-                                new String[] { Talk.getTask(0, 63), Talk.getTask(0, 64), Talk.getTask(0, 65) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 62)}),
+                                new String[]{Talk.getTask(0, 63), Talk.getTask(0, 64), Talk.getTask(0, 65)});
                     }
                 } else if (ninja.getTaskIndex() == 6) {
                     if (menuId == 2) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 71),
-                                new String[] { Talk.getTask(0, 72), Talk.getTask(0, 73), Talk.getTask(0, 74) });
+                                new String[]{Talk.getTask(0, 72), Talk.getTask(0, 73), Talk.getTask(0, 74)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 67) }),
-                                new String[] { Talk.getTask(0, 68), Talk.getTask(0, 69), Talk.getTask(0, 70) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 67)}),
+                                new String[]{Talk.getTask(0, 68), Talk.getTask(0, 69), Talk.getTask(0, 70)});
                     }
                 } else if (ninja.getTaskIndex() == 7) {
                     if (menuId == 0) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 75),
-                                new String[] { Talk.getTask(0, 76), Talk.getTask(0, 77), Talk.getTask(0, 78) });
+                                new String[]{Talk.getTask(0, 76), Talk.getTask(0, 77), Talk.getTask(0, 78)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 71) }),
-                                new String[] { Talk.getTask(0, 72), Talk.getTask(0, 73), Talk.getTask(0, 74) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 71)}),
+                                new String[]{Talk.getTask(0, 72), Talk.getTask(0, 73), Talk.getTask(0, 74)});
                     }
                 } else if (ninja.getTaskIndex() == 8) {
                     if (menuId == 2) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 79),
-                                new String[] { Talk.getTask(0, 80), Talk.getTask(0, 81), Talk.getTask(0, 82) });
+                                new String[]{Talk.getTask(0, 80), Talk.getTask(0, 81), Talk.getTask(0, 82)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 75) }),
-                                new String[] { Talk.getTask(0, 76), Talk.getTask(0, 77), Talk.getTask(0, 78) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 75)}),
+                                new String[]{Talk.getTask(0, 76), Talk.getTask(0, 77), Talk.getTask(0, 78)});
                     }
                 } else if (ninja.getTaskIndex() == 9) {
                     if (menuId == 2) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 83),
-                                new String[] { Talk.getTask(0, 84), Talk.getTask(0, 85), Talk.getTask(0, 86) });
+                                new String[]{Talk.getTask(0, 84), Talk.getTask(0, 85), Talk.getTask(0, 86)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 79) }),
-                                new String[] { Talk.getTask(0, 80), Talk.getTask(0, 81), Talk.getTask(0, 82) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 79)}),
+                                new String[]{Talk.getTask(0, 80), Talk.getTask(0, 81), Talk.getTask(0, 82)});
                     }
                 } else if (ninja.getTaskIndex() == 10) {
                     if (menuId == 1) {
@@ -485,48 +485,48 @@ public class TaskHandle {
                         Service.openUISay(ninja, (short) npcTemplateId, Talk.getTask(0, 87));
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 83) }),
-                                new String[] { Talk.getTask(0, 84), Talk.getTask(0, 85), Talk.getTask(0, 86) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 83)}),
+                                new String[]{Talk.getTask(0, 84), Talk.getTask(0, 85), Talk.getTask(0, 86)});
                     }
                 } else if (ninja.getTaskIndex() == 11) {
                     if (menuId == 0) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 92),
-                                new String[] { Talk.getTask(0, 93), Talk.getTask(0, 94), Talk.getTask(0, 95) });
+                                new String[]{Talk.getTask(0, 93), Talk.getTask(0, 94), Talk.getTask(0, 95)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 88) }),
-                                new String[] { Talk.getTask(0, 89), Talk.getTask(0, 90), Talk.getTask(0, 91) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 88)}),
+                                new String[]{Talk.getTask(0, 89), Talk.getTask(0, 90), Talk.getTask(0, 91)});
                     }
                 } else if (ninja.getTaskIndex() == 12) {
                     if (menuId == 1) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 96),
-                                new String[] { Talk.getTask(0, 97), Talk.getTask(0, 98), Talk.getTask(0, 99) });
+                                new String[]{Talk.getTask(0, 97), Talk.getTask(0, 98), Talk.getTask(0, 99)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 92) }),
-                                new String[] { Talk.getTask(0, 93), Talk.getTask(0, 94), Talk.getTask(0, 95) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 92)}),
+                                new String[]{Talk.getTask(0, 93), Talk.getTask(0, 94), Talk.getTask(0, 95)});
                     }
                 } else if (ninja.getTaskIndex() == 13) {
                     if (menuId == 2) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 100),
-                                new String[] { Talk.getTask(0, 101), Talk.getTask(0, 102), Talk.getTask(0, 103) });
+                                new String[]{Talk.getTask(0, 101), Talk.getTask(0, 102), Talk.getTask(0, 103)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 96) }),
-                                new String[] { Talk.getTask(0, 97), Talk.getTask(0, 98), Talk.getTask(0, 99) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 96)}),
+                                new String[]{Talk.getTask(0, 97), Talk.getTask(0, 98), Talk.getTask(0, 99)});
                     }
                 } else if (ninja.getTaskIndex() == 14) {
                     if (menuId == 2) {
                         ninja.upMainTask();
                         Service.openUIConfirm(ninja, (short) npcTemplateId, Talk.getTask(0, 104),
-                                new String[] { Talk.getTask(0, 105), Talk.getTask(0, 106), Talk.getTask(0, 107) });
+                                new String[]{Talk.getTask(0, 105), Talk.getTask(0, 106), Talk.getTask(0, 107)});
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 100) }),
-                                new String[] { Talk.getTask(0, 101), Talk.getTask(0, 102), Talk.getTask(0, 103) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 100)}),
+                                new String[]{Talk.getTask(0, 101), Talk.getTask(0, 102), Talk.getTask(0, 103)});
                     }
                 } else if (ninja.getTaskIndex() == 15) {
                     if (menuId == 1) {
@@ -534,8 +534,8 @@ public class TaskHandle {
                         Service.openUISay(ninja, (short) npcTemplateId, Talk.getTask(0, 108));
                     } else {
                         Service.openUIConfirm(ninja, (short) npcTemplateId,
-                                String.format(Talk.getTask(0, 24), new Object[] { Talk.getTask(0, 104) }),
-                                new String[] { Talk.getTask(0, 105), Talk.getTask(0, 106), Talk.getTask(0, 107) });
+                                String.format(Talk.getTask(0, 24), new Object[]{Talk.getTask(0, 104)}),
+                                new String[]{Talk.getTask(0, 105), Talk.getTask(0, 106), Talk.getTask(0, 107)});
                     }
                 }
             }
@@ -701,14 +701,156 @@ public class TaskHandle {
                 }
                 break;
 
-            default:
-//                if (taskTemplates.length > ninja.getTaskId()) {
-//                    val task = taskTemplates[ninja.getTaskId()];
-//                    if (ninja.getTaskIndex() == 0 && task.getMinLevel() <= ninja.getLevel()
-//                            || task.getBypass()) {
-//                        ninja.upMainTask();
-//                    }
+//            case 16:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 22) {
+//                    ninja.upMainTask();
 //                }
+//                break;
+//
+//            case 17:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 25) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//
+//            case 18:
+//            case 19:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 26) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//
+//            case 20:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 28) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//
+//            case 21:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 30) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//
+//            case 22:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 32) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//
+//            case 23:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 35) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 24:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 36) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 25:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 37) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//
+//            case 26:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 38) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//
+//            case 27:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 39) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 28:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 41) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 29:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 43) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 30:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 44) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 31:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 45) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//
+//            case 32:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 49) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//
+//            case 33:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 51) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 34:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 53) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 35:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 55) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 36:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 57) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 37:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 59) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 38:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 61) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 39:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 63) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 40:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 65) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 41:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 67) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+//            case 42:
+//                if (ninja.getTaskIndex() == 0 && ninja.getLevel() >= 69) {
+//                    ninja.upMainTask();
+//                }
+//                break;
+
+            default:
+                if (taskTemplates.length > ninja.getTaskId()) {
+                    val task = taskTemplates[ninja.getTaskId()];
+                    if (ninja.getTaskIndex() == 0 && task.getMinLevel() <= ninja.getLevel()
+                            || task.getBypass()) {
+                        ninja.upMainTask();
+                    }
+                }
         }
         inMap(ninja);
     }

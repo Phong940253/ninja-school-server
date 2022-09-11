@@ -56,6 +56,7 @@ public class Place {
 
     private int numTA;
     private int numTL;
+    private int numTT;
     protected int numMobDie;
 
     @NotNull
@@ -1437,14 +1438,15 @@ public class Place {
                     if (!this.map.isLdgtMap()) {
                         if (mob.level >= 10
                                 && PERCENT_TA_TL > util.nextInt(100)
-                                && (this.numTA < 3 && this.numTL < 1) && candyBattle == null) {
+                                && (this.numTA < 10 && this.numTL < 3 && this.numTT < 1) && candyBattle == null) {
 
                             int luck = util.nextInt(100);
-                            if (luck <= 10) {
+                            if (luck <= 0)
+                                mob.lvboss = 4;
+                            else if (luck <= 10)
                                 mob.lvboss = 2;
-                            } else {
+                            else
                                 mob.lvboss = 1;
-                            }
                         }
                     } else {
                         if (mob.templates.id != 81
@@ -1454,18 +1456,23 @@ public class Place {
                     }
                 }
 
+
                 if (this.map.cave != null && this.map.cave.finsh > 0 && this.map.getXHD() == 6) {
                     final int hpup = mob.templates.hp * (10 * this.map.cave.finsh + 100) / 100;
                     final int n = hpup;
                     mob.hpmax = n;
                     mob.hp = n;
                 } else {
-
                     final int hp = mob.templates.hp;
                     mob.hpmax = hp;
                     mob.hp = hp;
                 }
-                if (mob.lvboss == 3) {
+                if (mob.lvboss == 4) {
+                    ++this.numTT;
+                    final int hp = mob.templates.hp * 1000;
+                    mob.hpmax = hp;
+                    mob.hp = hp;
+                } else if (mob.lvboss == 3) {
                     final int n2 = mob.hpmax * 200;
                     mob.hpmax = n2;
                     mob.hp = n2;

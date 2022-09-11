@@ -23,7 +23,7 @@ import threading.Server;
 
 import static clan.ClanThanThu.*;
 import static threading.Manager.MIN_DA_LV;
-import static threading.Manager.MAX_DA_LV;;
+import static threading.Manager.MAX_DA_LV;
 
 public class ItemData {
 
@@ -621,13 +621,13 @@ public class ItemData {
 
         for (int j = 0; j < nHpMp; j++) {
             for (int n = 0; n < setHp.length; n++) {
-                items[a] = (short) setHp[n];
+                items[a] = setHp[n];
                 a++;
 
                 break;
             }
             for (int n = 0; n < setMp.length; n++) {
-                items[a] = (short) setMp[n];
+                items[a] = setMp[n];
                 a++;
                 break;
             }

@@ -221,7 +221,7 @@ public class useItem {
         switch (item.id) {
             case 12: {
                 p.nj.upyenMessage(
-                        Math.min(p.nj.get().getLevel(), MAX_LEVEL_RECEIVE_YEN_COEF) * Manager.YEN_COEF
+                        (long) Math.min(p.nj.get().getLevel(), MAX_LEVEL_RECEIVE_YEN_COEF) * Manager.YEN_COEF
                                 * util.nextInt(90, 100) / 100);
                 p.nj.removeItemBag(index, 1);
                 break;
@@ -371,7 +371,7 @@ public class useItem {
                 if (luck <= 30) {
                     // up yen
                     p.nj.upyenMessage(
-                            Math.min(Manager.MAX_LEVEL_RECEIVE_YEN_COEF, p.nj.getMaxLevel()) * Manager.YEN_COEF
+                            (long) Math.min(Manager.MAX_LEVEL_RECEIVE_YEN_COEF, p.nj.getMaxLevel()) * Manager.YEN_COEF
                                     * util.nextInt(90, 100) / 100);
 
                 } else if (luck <= 40) {
@@ -507,9 +507,7 @@ public class useItem {
                 final Ninja c = p.nj;
                 c.maxluggage += useItem.arrOpenBag[level];
                 final Item[] bag = new Item[p.nj.maxluggage];
-                for (int j = 0; j < p.nj.ItemBag.length; ++j) {
-                    bag[j] = p.nj.ItemBag[j];
-                }
+                System.arraycopy(p.nj.ItemBag, 0, bag, 0, p.nj.ItemBag.length);
                 (p.nj.ItemBag = bag)[index] = null;
                 p.openBagLevel(index);
                 break;

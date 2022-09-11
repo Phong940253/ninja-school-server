@@ -333,7 +333,7 @@ public class Session extends Thread {
     }
 
     public boolean isExpired() {
-        return !this.login && (System.currentTimeMillis() - this.createdAt > Manager.TIME_NO_LOGIN_DISCONNECT * 1000);
+        return !this.login && (System.currentTimeMillis() - this.createdAt > Manager.TIME_NO_LOGIN_DISCONNECT * 1000L);
     }
 
     public void disconnect() {

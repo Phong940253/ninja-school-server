@@ -10,7 +10,7 @@ public class Text {
             exception.printStackTrace();
         }
 
-        return String.format("ERROR[%d:%d]", new Object[]{Integer.valueOf(type), Integer.valueOf(num)});
+        return String.format("ERROR[%d:%d]", Integer.valueOf(type), Integer.valueOf(num));
     }
 
     private static final String[] TEXTVIE = new String[]{

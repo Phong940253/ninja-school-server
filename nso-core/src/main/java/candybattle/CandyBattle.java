@@ -54,10 +54,10 @@ public class CandyBattle extends GBattle {
         return -1;
     }
 
-    public static enum State {
+    public enum State {
         INIT,
         HIEN_THI_PHU_THUY,
-        DOI_KEO;
+        DOI_KEO
     }
 
     private State subState;

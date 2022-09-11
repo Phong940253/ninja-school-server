@@ -49,7 +49,7 @@ public class TopEventManager {
 
         SQLManager.executeQuery(String.format(
                 "SELECT name, eventData->> '$.annual.a%d' as count FROM `ninja` WHERE eventData->> '$.annual.a%d' is not null order by -eventData->> '$.annual.a%d';",
-                new Object[] { eventItemId, eventItemId, eventItemId }), (red) -> {
+                eventItemId, eventItemId, eventItemId), (red) -> {
                     int i = 1;
                     while (red.next()) {
                         final EventEntry tXHE = new EventEntry();

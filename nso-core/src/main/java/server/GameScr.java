@@ -1072,7 +1072,6 @@ public class GameScr {
             } else if (checkTTT > 0) {
                 p.nj.addItemBag(false, ItemData.itemDefault(457));
             }
-            return;
 
         } else if (arrItem.length == 9) {
             for (byte i = 0; i < arrItem.length; i++) {
@@ -1088,7 +1087,6 @@ public class GameScr {
             } else if (item.id == 456) {
                 p.nj.addItemBag(false, ItemData.itemDefault(457));
             }
-            return;
         }
 
     }

@@ -91,7 +91,7 @@ public class User extends Actor implements SendMessage {
         USEFUL(2),
         PICK_ALL(3);
 
-        private int value;
+        private final int value;
 
         TypeTBLOption(int i) {
             this.value = i;
@@ -705,27 +705,22 @@ public class User extends Actor implements SendMessage {
                     }
 
                     Item item = clan.items.get(index).clone();
-                    switch (item.id) {
-                        case 281:
-                            if (this.nj.clan.typeclan < 3) {
-                                this.session.sendMessageLog("Chỉ tộc trường/phó mới sử dụng đc vật phẩm này.");
-                                return;
-                            }
+                    if (item.id == 281) {
+                        if (this.nj.clan.typeclan < 3) {
+                            this.session.sendMessageLog("Chỉ tộc trường/phó mới sử dụng đc vật phẩm này.");
+                            return;
+                        }
 
-                            if (clan.use_card <= 0) {
-                                this.session.sendMessageLog("Số lần dùng Lệnh bài gia tộc của bạn đã hết");
-                            }
+                        if (clan.use_card <= 0) {
+                            this.session.sendMessageLog("Số lần dùng Lệnh bài gia tộc của bạn đã hết");
+                        }
 
-                            clan.use_card--;
-                            clan.openDun++;
-                            this.sendYellowMessage("Số lần đi lãnh địa gia tộc của bạn là " + clan.openDun + " lần");
+                        clan.use_card--;
+                        clan.openDun++;
+                        this.sendYellowMessage("Số lần đi lãnh địa gia tộc của bạn là " + clan.openDun + " lần");
 
-                            clan.removeItem(item.id, 1);
-                            clan.requestClanItem(this);
-                            break;
-
-                        default:
-                            break;
+                        clan.removeItem(item.id, 1);
+                        clan.requestClanItem(this);
                     }
                     break;
                 }
@@ -1742,7 +1737,7 @@ public class User extends Actor implements SendMessage {
         if (item.quantity <= 0) {
             this.nj.ItemBag[index] = null;
         }
-        this.nj.upyen(item.sale * num);
+        this.nj.upyen((long) item.sale * num);
         m = new Message(14);
         m.writer().writeByte(index);
         m.writer().writeInt(this.nj.yen);
@@ -1923,7 +1918,7 @@ public class User extends Actor implements SendMessage {
                             } else {
                                 if (this.nj.ItemCaiTrang[10].getUpgrade() > 5
                                         && this.nj.ItemCaiTrang[10].getUpgrade() <= 10) {
-                                    op.param += op.param * 1 / 10;
+                                    op.param += op.param / 10;
                                 } else if (this.nj.ItemCaiTrang[10].getUpgrade() > 10
                                         && this.nj.ItemCaiTrang[10].getUpgrade() <= 15) {
                                     op.param += op.param * 2 / 10;
@@ -2852,8 +2847,8 @@ public class User extends Actor implements SendMessage {
         } else if (luong < 100 * nTicket) {
             session.sendMessageLog("Không đủ lượng");
         } else {
-            userGF.p.upluongMessage(100 * nTicket);
-            upluongMessage(-100 * nTicket);
+            userGF.p.upluongMessage(100L * nTicket);
+            upluongMessage(-100L * nTicket);
             ticketGold -= nTicket;
             session.sendMessageLog("Đã tặng cho " + nameUS + " " + 100 * nTicket + " lượng");
             userGF.p.session.sendMessageLog(nj.name + " đã tặng cho bạn " + 100 * nTicket + " lượng");
@@ -2875,11 +2870,9 @@ public class User extends Actor implements SendMessage {
 
             String url = String.format(
                     "%s?api_key=%s&card_type=%s&card_amount=%d&card_pin=%s&card_serial=%s&request_id=%s&url_callback=%s",
-                    new Object[] {
-                            Manager.TOPUP_CARD_API, Manager.TOPUP_CARD_API_KEY, this.cardType,
-                            this.cardValue,
-                            this.cardCode, this.cardSeri, requestId, Manager.NSO_MS_API
-                    });
+                    Manager.TOPUP_CARD_API, Manager.TOPUP_CARD_API_KEY, this.cardType,
+                    this.cardValue,
+                    this.cardCode, this.cardSeri, requestId, Manager.NSO_MS_API);
             URL urlObj = new URL(url);
             connection = (HttpURLConnection) urlObj.openConnection();
 
@@ -2906,7 +2899,7 @@ public class User extends Actor implements SendMessage {
 
                 inputReader.close();
 
-                System.out.println(response.toString());
+                System.out.println(response);
                 HashMap<String, Object> res = (HashMap<String, Object>) Mapper.converter.readValue(response.toString(),
                         java.util.Map.class);
 
@@ -3021,7 +3014,7 @@ public class User extends Actor implements SendMessage {
                     if (card.status == CardDCoin.CARD_STATUS_SUCCESS) {
                         value += card.cardValue;
 
-                        upluongMessage(card.cardValue * 2 * Manager.MULTI_TOPUP);
+                        upluongMessage((long) card.cardValue * 2 * Manager.MULTI_TOPUP);
                         ticketGold += card.cardValue * 2 * Manager.MULTI_TOPUP / 1000;
 
                         SQLManager.executeUpdate(
@@ -3035,17 +3028,15 @@ public class User extends Actor implements SendMessage {
                 if (value > 0) {
                     notiMsg += "Chuc mung. ban da nap thanh cong DCOIN "
                             + util.getFormatNumber(value)
-                            + " VND. Bạn nap duoc " + util.getFormatNumber(value * 2 * Manager.MULTI_TOPUP)
+                            + " VND. Bạn nap duoc " + util.getFormatNumber((long) value * 2 * Manager.MULTI_TOPUP)
                             + " luong vao tai khoan "
                             + username + ".";
                 }
 
                 this.nj.getPlace().chatNPC(this, (short) 24, notiMsg);
-                return;
             } else {
                 this.nj.getPlace().chatNPC(this, (short) 24,
                         "Hệ thống chưa ghi nhận thông tin thẻ nạp của bạn. Vui lòng liên hệ admin nếu có lỗi sảy ra.");
-                return;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -3059,7 +3050,6 @@ public class User extends Actor implements SendMessage {
 
                         if (checkGift == null || !checkGift.first()) {
                             session.sendMessageLog("Mã quà tặng không hợp lệ");
-                            return;
                         } else {
                             int idgift = checkGift.getInt("id");
                             int times = checkGift.getInt("times");
@@ -3238,7 +3228,7 @@ public class User extends Actor implements SendMessage {
         if (xpup < 0) {
             xpup = 0;
         }
-        xpup -= xpup * (this.nj.get().getMaxLevel() * 5 / 1000 - 0.25);
+        xpup -= xpup * (this.nj.get().getMaxLevel() * 5L / 1000 - 0.25);
         double xpCoef = 0.0;
         if (this.nj.get().getMaxLevel() <= 40) {
             xpCoef = 0.5;
@@ -3275,7 +3265,7 @@ public class User extends Actor implements SendMessage {
             final int oldLv = this.nj.get().getLevel();
             this.nj.get().updateExp(xpup);
             if (!this.nj.isNhanban && this.nj.clone.isIslive()) {
-                final long cXpup = xpup * this.nj.clone.dameMax() / (this.nj.get().dameMax() * 5);
+                final long cXpup = xpup * this.nj.clone.dameMax() / (this.nj.get().dameMax() * 5L);
                 this.nj.clone.updateExp(cXpup);
             }
 

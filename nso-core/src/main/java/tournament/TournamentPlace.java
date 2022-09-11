@@ -50,7 +50,6 @@ public class TournamentPlace extends Place {
 
     @Override
     public void wakeUpDieReturn(User p) {
-        return;
     }
 
     private enum State {

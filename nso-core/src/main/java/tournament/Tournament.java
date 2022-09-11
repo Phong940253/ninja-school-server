@@ -415,11 +415,7 @@ public abstract class Tournament {
 
             Item item = ItemData.itemDefault(reward[0]);
             item.quantity = (11 - rank) * reward[1];
-            if (item.getData().type == 26) {
-                nj.addItemBag(false, item);
-            } else {
-                nj.addItemBag(true, item);
-            }
+            nj.addItemBag(item.getData().type != 26, item);
         }
 
         nj.setRewardTournament(false);

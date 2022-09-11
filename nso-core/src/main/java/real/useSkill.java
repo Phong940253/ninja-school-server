@@ -171,7 +171,7 @@ public class useSkill {
                 // p.sendYellowMessage("Không có đủ " + ItemData.ItemDataId(545).name);
                 // break;
                 // }
-                p.nj.clone.open(System.currentTimeMillis() + 60000 * p.nj.getPramSkill(68), p.nj.getPramSkill(71));
+                p.nj.clone.open(System.currentTimeMillis() + 60000L * p.nj.getPramSkill(68), p.nj.getPramSkill(71));
                 // if (p.nj.quantityItemyTotal(545) > 0) {
                 // p.nj.removeItemBags(545, 1);
                 // break;
@@ -191,14 +191,10 @@ public class useSkill {
             throws IOException {
         final Skill skill = p.nj.get().getSkill(skilltemp);
         final SkillTemplates temp = SkillData.Templates(skill.id, skill.point);
-        switch (skilltemp) {
-            case 49: {
-                if (n.isDie && !n.getPlace().map.isLangCo()) {
-                    n.p.liveFromDead();
-                    n.p.setEffect(11, 0, 5000, p.nj.get().getPramSkill(28));
-                    break;
-                }
-                break;
+        if (skilltemp == 49) {
+            if (n.isDie && !n.getPlace().map.isLangCo()) {
+                n.p.liveFromDead();
+                n.p.setEffect(11, 0, 5000, p.nj.get().getPramSkill(28));
             }
         }
     }

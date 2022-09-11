@@ -54,11 +54,7 @@ public class PlayerManager {
     }
 
     public boolean check(String clientIpAddress) {
-        if (this.conns_size(clientIpAddress) < Manager.MAX_SOCKET_PER_CLIENT) {
-            return true;
-        }
-
-        return false;
+        return this.conns_size(clientIpAddress) < Manager.MAX_SOCKET_PER_CLIENT;
     }
 
     public boolean checkGhostIpAddress(String clientIpAddress) {

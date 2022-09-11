@@ -49,7 +49,7 @@ public class MenuController {
     }
 
     public void showShinwaItems(User p, int optionId, String searchName) throws IOException {
-        final List<ItemShinwa> itemShinwas = items.get((int) optionId);
+        final List<ItemShinwa> itemShinwas = items.get(optionId);
         Message mess = new Message(103);
         mess.writer().writeByte(optionId);
         if (itemShinwas != null) {
@@ -93,22 +93,22 @@ public class MenuController {
             if (ninja.getTaskIndex() == -1) {
 
                 if (menuId == -1) {
-                    TaskHandle.Task(ninja, (short) npcId);
+                    TaskHandle.Task(ninja, npcId);
                     return;
                 }
             } else if (TaskHandle.isFinishTask(ninja)) {
                 if (menuId == -1) {
-                    TaskHandle.finishTask(ninja, (short) npcId);
+                    TaskHandle.finishTask(ninja, npcId);
                     return;
                 }
             } else if (ninja.getTaskId() == 1) {
                 if (menuId == -1) {
-                    TaskHandle.doTask(ninja, (short) npcId, menuId, optionId);
+                    TaskHandle.doTask(ninja, npcId, menuId, optionId);
                     return;
                 }
             } else if (ninja.getTaskId() == 7) {
                 if (menuId == -1) {
-                    TaskHandle.doTask(ninja, (short) npcId, menuId, optionId);
+                    TaskHandle.doTask(ninja, npcId, menuId, optionId);
                     return;
                 }
             } else if (ninja.getTaskId() == 8 || ninja.getTaskId() == 0) {
@@ -610,7 +610,7 @@ public class MenuController {
                         if (value == 2) {
                             p.nj.getPlace().chatNPC(p, (short) npcId, "Ngươi cần giày, giáp sắt, quần áo?");
                         }
-                        break label;
+                        break;
                     }
                     break;
                 }
@@ -787,7 +787,7 @@ public class MenuController {
                             p.nj.getPlace().chatNPC(p, (short) npcId,
                                     "Mua ngay HP, MP từ ta, được chế tạo từ loại thảo dược quý hiếm nhất.");
                         }
-                        break label;
+                        break;
                     }
                     break;
                 }
@@ -896,11 +896,11 @@ public class MenuController {
                                     p.nj.caiTrang = -1;
                                     Message msg = new Message(11);
                                     msg.writer().writeByte(-1);
-                                    msg.writer().writeByte((int) p.nj.get().speed());
-                                    msg.writer().writeInt((int) p.nj.get().getMaxHP());
-                                    msg.writer().writeInt((int) p.nj.get().getMaxMP());
-                                    msg.writer().writeShort((int) p.nj.get().eff5buffHP());
-                                    msg.writer().writeShort((int) p.nj.get().eff5buffMP());
+                                    msg.writer().writeByte(p.nj.get().speed());
+                                    msg.writer().writeInt(p.nj.get().getMaxHP());
+                                    msg.writer().writeInt(p.nj.get().getMaxMP());
+                                    msg.writer().writeShort(p.nj.get().eff5buffHP());
+                                    msg.writer().writeShort(p.nj.get().eff5buffMP());
                                     msg.writer().flush();
                                     p.sendMessage(msg);
                                     msg.cleanup();
@@ -1161,7 +1161,7 @@ public class MenuController {
                             break;
                         }
 
-                        p.Admission(classesByNpcId.get((int) npcId).get((int) optionId).byteValue());
+                        p.Admission(classesByNpcId.get((int) npcId).get(optionId).byteValue());
                         p.nj.getPlace().chatNPC(p, (short) npcId, "Hãy chăm chỉ luyện tập để lên cấp con nhé");
                         break;
                     }
@@ -1404,8 +1404,8 @@ public class MenuController {
                         return;
                     }
                     p.upExpClan(util.nextInt(1, 10 + clan.getLevel()));
-                    p.upluongMessage(5 * clan.getLevel());
-                    p.nj.upyenMessage(5000 * clan.getLevel());
+                    p.upluongMessage(5L * clan.getLevel());
+                    p.nj.upyenMessage(5000L * clan.getLevel());
                     p.nj.getPlace().chatNPC(p, (short) npcId, "Điểm danh mỗi ngày sẽ nhận được các phần quà giá trị");
                     break;
                 }
@@ -1934,12 +1934,12 @@ public class MenuController {
                     switch (menuId) {
                         case 0: {
                             p.typemenu = 92_0;
-                            this.doMenuArray(p, new String[] { "Thông tin", "Luật chơi" });
+                            doMenuArray(p, new String[] { "Thông tin", "Luật chơi" });
                             break;
                         }
                         case 1: {
                             p.typemenu = 92_1;
-                            this.doMenuArray(p, new String[] { "Thông tin", "Luật chơi" });
+                            doMenuArray(p, new String[] { "Thông tin", "Luật chơi" });
                             break;
                         }
                         case 2: {
@@ -2054,7 +2054,7 @@ public class MenuController {
                                         "Ngọc bội", "Giày",
                                         "Bùa", "Linh tinh" };
                                 p.typemenu = 28_0;
-                                this.doMenuArray(p, itemShinwaTypes);
+                                doMenuArray(p, itemShinwaTypes);
                             }
 
                             break;
@@ -2316,7 +2316,6 @@ public class MenuController {
                                         "Hãy luyện tập chăm chỉ để tăng cấp và nhận phần thưởng con nhé");
                                 p.nj.reward90 = 1;
                                 p.upluongMessage(100);
-                                ;
                                 p.nj.upyenMessage(1500000);
                                 p.nj.upxuMessage(1500000);
 
@@ -2521,11 +2520,11 @@ public class MenuController {
                     switch (menuId) {
                         case 0:
                             p.typemenu = 36_7_0;
-                            this.doMenuArray(p, new String[] { "Tre xanh 100 đốt", "Tre vàng 100 đốt" });
+                            doMenuArray(p, new String[] { "Tre xanh 100 đốt", "Tre vàng 100 đốt" });
                             break;
                         case 1:
                             p.typemenu = 36_7_1;
-                            this.doMenuArray(p, new String[] { "Nhận", "Huỷ", "Hoàn thành", "Hướng dẫn" });
+                            doMenuArray(p, new String[] { "Nhận", "Huỷ", "Hoàn thành", "Hướng dẫn" });
                             break;
                         default:
                             break;
@@ -2615,12 +2614,12 @@ public class MenuController {
                     switch (menuId) {
                         case 0: {
                             p.typemenu = 572_0;
-                            this.doMenuArray(p, new String[] { "Phạm vi 240", "Phạm vi 480", "Phạm vi toàn map" });
+                            doMenuArray(p, new String[] { "Phạm vi 240", "Phạm vi 480", "Phạm vi toàn map" });
                             break;
                         }
                         case 1: {
                             p.typemenu = 572_1;
-                            this.doMenuArray(p, new String[] { "Không nhặt", "Nhật v.phẩm hữu dụng", "Nhặt tất cả" });
+                            doMenuArray(p, new String[] { "Không nhặt", "Nhật v.phẩm hữu dụng", "Nhặt tất cả" });
                             break;
                         }
                         case 2: {
@@ -2752,7 +2751,7 @@ public class MenuController {
     private void nangMat(User p, Item item, boolean vip) throws IOException {
 
         if (item.id < 694) {
-            int toneCount = (int) Arrays.stream(p.nj.ItemBag).filter(i -> i != null && i.id == item.id + 11)
+            int toneCount = Arrays.stream(p.nj.ItemBag).filter(i -> i != null && i.id == item.id + 11)
                     .map(i -> i.quantity).reduce(0, Integer::sum);
             if (toneCount >= nangCapMat.get(item.getUpgrade())[0]) {
                 if (!this.checkToGetOrUpgradeEye(p, item.getUpgrade() + 1)) {
@@ -2829,15 +2828,15 @@ public class MenuController {
                     p);
         }
         if (idnpc == 24 && p.nj.getLevel() >= 1) {
-            this.doMenuArray(p, new String[] { "Đổi lượng", "Đổi yên qua xu", "Nhận thưởng thăng cấp", "Nói chuyện",
+            doMenuArray(p, new String[] { "Đổi lượng", "Đổi yên qua xu", "Nhận thưởng thăng cấp", "Nói chuyện",
                     "Mã quà tặng", "Tặng lượng", "Ký gửi Xu/Yên", "Dịch vụ CARD/ATM/MoMo" });
         } else if (idnpc == 30 && p.nj.getLevel() >= 1) {
-            this.doMenuArray(p, new String[] { "Lật hình", "Mã quà tặng", "Vòng quay VIP", "Vòng quay thường",
+            doMenuArray(p, new String[] { "Lật hình", "Mã quà tặng", "Vòng quay VIP", "Vòng quay thường",
                     "Tài Xỉu" });
         } else if (idnpc == 28 && p.nj.getLevel() >= 1) {
-            this.doMenuArray(p, new String[] { "Gian hàng", "Bán vật phẩm", "Nhận lại vật phẩm", "Tìm kiếm vật phẩm" });
+            doMenuArray(p, new String[] { "Gian hàng", "Bán vật phẩm", "Nhận lại vật phẩm", "Tìm kiếm vật phẩm" });
         } else if (idnpc == 32 && p.nj.getLevel() >= 1) {
-            this.doMenuArray(p, new String[] { "Gia tộc chiến", "Tinh luyện", "Bí kíp" });
+            doMenuArray(p, new String[] { "Gia tộc chiến", "Tinh luyện", "Bí kíp" });
         } else if (idnpc == 0 && (p.nj.getPlace().map.isGtcMap() ||
                 p.nj.getPlace().map.loiDaiMap())) {
             if (p.nj.hasBattle() || p.nj.getClanBattle() != null) {
@@ -3072,9 +3071,9 @@ public class MenuController {
             it.quantity = quantity * it.quantity;
 
             p.nj.addItemBag(true, it);
-            p.nj.upxuMessage(-entry.getCoin() * quantity);
-            p.nj.upyenMessage(-entry.getCoinLock() * quantity);
-            p.upluongMessage(-entry.getGold() * quantity);
+            p.nj.upxuMessage((long) -entry.getCoin() * quantity);
+            p.nj.upyenMessage((long) -entry.getCoinLock() * quantity);
+            p.upluongMessage((long) -entry.getGold() * quantity);
         }
     }
 

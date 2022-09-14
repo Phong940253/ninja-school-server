@@ -154,7 +154,11 @@ public class Map extends Thread {
                 m.y = this.template.arrMoby[i];
                 m.status = this.template.arrMobstatus[i];
                 m.lvboss = this.template.arrLevelboss[i];
-                if (m.lvboss == 3) {
+                if (m.lvboss == 4) {
+                    final int n = m.hpmax * 1000;
+                    m.hpmax = n;
+                    m.hp = n;
+                } else if (m.lvboss == 3) {
                     if (j % 5 == 0) {
                         final int n = m.hpmax * 200;
                         m.hpmax = n;

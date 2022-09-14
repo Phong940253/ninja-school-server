@@ -170,12 +170,8 @@ public class Place {
 
     @Nullable
     public Mob getMob(final int id) {
-        for (short i = 0; i < this.getMobs().size(); ++i) {
-            if (this.getMobs().get(i).id == id) {
-                return this.getMobs().get(i);
-            }
-        }
-        return null;
+        final int size = this.getMobs().size();
+        return (id >= size) ? null : this.getMobs().get(id);
     }
 
     @NotNull
@@ -1443,7 +1439,7 @@ public class Place {
                             else if (luck <= 10)
                                 mob.lvboss = 2;
                             else
-                                mob.lvboss = 1;
+                                mob.lvboss = 4;
                         }
                     } else {
                         if (mob.templates.id != 81
@@ -4412,6 +4408,13 @@ public class Place {
     public void addBuNhin(final @NotNull BuNhin buNhin) {
         buNhins.add(buNhin);
         MessageSubCommand.sendBuNhin(buNhin, getUsers());
+    }
+
+    public void addMob(final @Nullable Mob mob) {
+        if (mob == null) {
+            return;
+        }
+        _mobs.add(mob);
     }
 
     public void removeBuNhin(@NotNull final BuNhin buNhin) {

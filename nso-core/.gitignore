@@ -14,4 +14,6 @@ codefix/node_modules/
 .env
 
 # ignore cache server
-.cache/
+cache/
+
+nja1.sql

@@ -816,7 +816,8 @@ public class GameScr {
             percent = (int) (percent * 1.5);
             gold = GameScr.goldUps[item.getUpgrade()];
         }
-        if (coins > p.nj.yen + p.nj.xu || gold > p.luong) {
+        if (coins > (long) p.nj.yen + (long) p.nj.xu || gold > p.luong) {
+            p.session.sendMessageLog("Không đủ xu, yên hoặc lượng");
             return;
         }
         for (byte j = 0; j < arrItem.length; ++j) {

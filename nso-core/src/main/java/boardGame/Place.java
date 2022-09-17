@@ -2156,7 +2156,10 @@ public class Place {
             xpnew *= 5;
         } else if (curMob.lvboss == 3) {
             xpnew /= 2;
+        } else if (curMob.lvboss == 4) {
+            xpnew *= 10;
         }
+
         if (this.map.isLangCo()) {
             xpnew = xpnew * 110 / 100;
         } else if (this.map.VDMQ()) {

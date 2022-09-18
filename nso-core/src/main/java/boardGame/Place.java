@@ -1439,7 +1439,7 @@ public class Place {
                             else if (luck <= 10)
                                 mob.lvboss = 2;
                             else
-                                mob.lvboss = 4;
+                                mob.lvboss = 1;
                         }
                     } else {
                         if (mob.templates.id != 81
